@@ -1,6 +1,6 @@
 import React from "react";
 
-function Reservation{
+function ViewReservation{
     return(
         <div>
             <div class="container">
@@ -27,4 +27,4 @@ function Reservation{
     )
 }
 
-export default Reservation;
+export default ViewReservation;
