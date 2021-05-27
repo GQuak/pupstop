@@ -1,24 +1,11 @@
 import "./App.css";
+import Yard from "./pages/Yard";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Pupstop for the goodest bois <code>src/App.js</code> and save to
-          reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Homepage />
+  )
 }
 
 export default App;
