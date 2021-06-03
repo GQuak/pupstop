@@ -1,18 +1,23 @@
 import React from 'react';
 
-function FilterCard() {
+function FilterCard(props) {
     return (
+                  <div className="card-container">
+
         <div className="row">
+        {props.filters.map(filter => (
           <div className="col-lg-4">
-            <a href="/hasfence">
-              <h3>Has High Fence</h3>
+            <a href={filter.path}>
+              <h3>{filter.name}</h3>
               <img
                 className="thumbnails"
-                src="../img/high fence.jpg"
-                alt="photo of large fence"
+                src={filter.image}
+                alt={filter.name}
               />
             </a>
           </div>
+        ))}
+        </div>
         </div>
     );
 };

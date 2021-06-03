@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Fully Fenced",
+        "image": "https://drive.google.com/uc?export=view&id=1H_YMZ0GC74rkPG8B26n8F5rOVjW8tHuT",
+        "path": "/hasfence"
+    },
+    {
+        "name": "Water Feature",
+        "image": "https://drive.google.com/uc?export=view&id=1lEDDrEnmr9E3SroFmzTfzvCILpgAuQIf",
+        "path": "/haswater"
+    },
+    {
+        "name": "Distraction-free",
+        "image": "https://drive.google.com/uc?export=view&id=15webNb9z28jH6dGsBkt6_eI_4xXSzA2a",
+        "path": "/distractionfree"
+    }
+]
