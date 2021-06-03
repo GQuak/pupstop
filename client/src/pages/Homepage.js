@@ -5,6 +5,7 @@ import FilterCard from "../components/FilterCard";
 import Testimonial from "../components/Testimonial";
 import yards from "../yards.json";
 import testimonials from "../testimonials.json";
+import filters from "../filters.json";
 
 function Homepage() {
   return (
@@ -15,7 +16,7 @@ function Homepage() {
           <YardCard yards={yards} />
       </div>
       <div className="container">
-        <FilterCard />
+        <FilterCard filters={filters} />
     </div>
     <Testimonial testimonials={testimonials}/>
     </div> //closing div, dont touch
