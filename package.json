@@ -48,6 +48,7 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server.js",
   "devDependencies": {
+    "bootstrap": "^5.0.1",
     "concurrently": "^4.1.2",
     "nodemon": "^1.19.4"
   },
