@@ -1,44 +1,55 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Navbar{
+const styles = {
+    img: {
+    height: 75,
+  },
+};
+
+function Navbar() {
     return (
         <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">
-            <img src="/img/pup-stop.png" alt="Company Logo" style="width: 40%; ">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link to="/" className={window.location.pathname === "/"
+                  ? "navbar-brand"
+                  : "navbar-brand"}>
+                <img src="https://drive.google.com/uc?export=view&id=1e5SH80LFLAl8Qm7tYuPfBnRPY-EvFqW1" alt="Company Logo" style={styles.img} />
+            </Link>
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                    <Link to="/profile" className={window.location.pathname === "/profile"
+                   ? "nav-link active"
+                  : "nav-link"}>
+                    Profile
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                    <Link to="/yard" className={window.location.pathname === "/yard"
+                   ? "nav-link active"
+                  : "nav-link"}>
+                        Find a Yard
+                        </Link>
+                    </li>
+                </ul>
+                <button classNameName="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+                    {/* <form style="white-space: nowrap;" className="form-inline my-2 my-lg-0">
+                        {{#if logged_in}}
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit"
+                            style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="logout">Logout</button>
+                        {{/if}}
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul style="white-space: nowrap; color: #5B95B3;" class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a style="color: #5B95B3;" class="nav-link" href="/profile">Profile
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a style="color: #5B95B3;" class="nav-link" href="/yard">Find a Yard</a>
-                </li>
-                 <li class="nav-item">
-                    <a style="color: #5B95B3;" class="nav-link" href="/yard">Gabe's place</a>
-                </li>
-            </ul>
-            <form style="white-space: nowrap;" class="form-inline my-2 my-lg-0">
-                {{#if logged_in}}
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-                    style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="logout">Logout</button>
-                {{/if}}
-
-                {{#unless logged_in}}
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-                    style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="login">Login</button>
-                {{/unless}}
-            </form>
-        </div>
-    </nav>
+                        {{#unless logged_in}}
+                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit"
+                            style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="login">Login</button>
+                        {{/unless}}
+                    </form> */}
+            </div>
+        </nav>
     </div>
     )
 }

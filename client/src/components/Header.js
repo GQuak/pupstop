@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from "../components/SearchBar"
 
+
 function Header() {
     return (
         <header className="masthead text-white text-center">
