@@ -69,7 +69,10 @@ header.masthead h1 {
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
-
+.icon {
+    width: 40px;
+    postion: relative;
+}
 .features-icons .features-icons-item {
     max-width: 20rem;
 }
