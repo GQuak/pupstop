@@ -48,6 +48,14 @@ const Footer = () => {
           </div>
           <div className="col-sm-4"></div>
         </div>
+        <br />
+        <div className="row">
+        <div className="col-sm-4"></div>
+          <div className="col-sm-3">
+            <p className="small mb-4 mb-lg-0 footer">&copy; PupStop 2021. A Bentley, Maverick, and Charley Production</p>
+          </div>
+        <div className="col-sm-4"></div>
+        </div>
       </div>
     </footer>
   );
