@@ -1,6 +1,6 @@
 import React from "react";
 
-function ViewReservation{
+function ViewReservation() {
     return(
         <div>
             <div class="container">

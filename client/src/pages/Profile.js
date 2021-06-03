@@ -7,7 +7,7 @@ function Profile() {
         <div className="col-md-4">
             <div className="row">
                 <img style="height: 250px; width: 250px; margin-left: 50px; margin-top: 50px;"
-                    src="../img/profile{{id}}.png" alt="picture of host">
+                    src="../img/profile{{id}}.png" alt="picture of host" />
             </div>
         </div>
         <div className="col-md-8">
