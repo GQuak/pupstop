@@ -6,7 +6,7 @@ function FilterCard(props) {
 
         <div className="row">
         {props.filters.map(filter => (
-          <div className="col-lg-4">
+          <div className="col-lg-4 card">
             <a href={filter.path}>
               <h3>{filter.name}</h3>
               <img

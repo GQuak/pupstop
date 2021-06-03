@@ -11,6 +11,7 @@ function Homepage() {
   return (
     <div>
       <Header />
+      <br />
       <div className="container">
         <h3>Pup-ular Spots</h3>
           <YardCard yards={yards} />

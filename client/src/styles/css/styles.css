@@ -139,3 +139,8 @@ footer.footer {
     margin-left: 0;
     ;
 }
+
+.card {
+    margin-top: 30px;
+    border: none;
+  }
