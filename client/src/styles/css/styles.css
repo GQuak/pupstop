@@ -12,6 +12,11 @@ h6 {
     font-weight: 700;
 }
 
+.navbar {
+    background-color: #fff;
+    color: #34374C;
+}
+
 .thumbnails {
     width: 300px;
     height: 300px;

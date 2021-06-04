@@ -10,11 +10,11 @@ const styles = {
 function Navbar() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light">
             <Link to="/" className={window.location.pathname === "/"
                   ? "navbar-brand"
                   : "navbar-brand"}>
-                <img src="https://drive.google.com/uc?export=view&id=1e5SH80LFLAl8Qm7tYuPfBnRPY-EvFqW1" alt="Company Logo" style={styles.img} />
+                <img src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV" alt="Company Logo" style={styles.img} />
             </Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
