@@ -1,13 +1,32 @@
 import React from "react";
 
+const styles = {
+  login: {
+    width: 300,
+    display: "flex",
+    justifyContent: "center",
+    alignSelf: "center",
+  },
+};
+
 function Login() {
   return (
     <div className="container">
       <div className="row">
         <div className="col-sm-4"></div>
         <div className="col-sm-3">
+          <img
+            src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
+            style={styles.login}
+          />
+        </div>
+        <div className="col-sm-4"></div>
+      </div>
+      <div className="row">
+        <div className="col-sm-4"></div>
+        <div className="col-sm-3">
           <form className="form signup-form">
-            <div className="form-group">
+            <div className="form-group" style={styles.login}>
               <input
                 className="form-input"
                 type="text"
@@ -15,7 +34,7 @@ function Login() {
                 placeholder="Email"
               />
             </div>
-            <div className="form-group">
+            <div className="form-group" style={styles.login}>
               <input
                 className="form-input"
                 type="text"
@@ -23,7 +42,7 @@ function Login() {
                 placeholder="Password"
               />
             </div>
-            <div className="form-group">
+            <div className="form-group" style={styles.login}>
               <button className="btn btn-primary" type="submit">
                 Login
               </button>
