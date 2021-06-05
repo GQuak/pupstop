@@ -51,6 +51,15 @@ function Login() {
         </div>
         <div className="col-sm-4"></div>
       </div>
+      <div className="row">
+        <div className="col-sm-4"></div>
+        <div className="col-sm-3">
+          <span style={styles.login}>
+            Don't have an account? <a href="/signup"> Sign up.</a>
+          </span>
+        </div>
+        <div className="col-sm-4"></div>
+      </div>
     </div>
   );
 }
