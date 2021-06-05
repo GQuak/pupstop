@@ -1,12 +1,16 @@
 const express = require("express");
+const logger = require("morgan");
 const path = require("path");
 const mongoose = require("mongoose");
+const compression = require("compression");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
 const apiRoutes = require("./routes/apiRoutes");
 
 // Define middleware here
+app.use(logger("dev"));
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
@@ -19,6 +23,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pupstop", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
+  useFindAndModify: false,
 });
 
 // Use apiRoutes
@@ -31,7 +36,7 @@ app.get("*", function (req, res) {
 });
 
 app.listen(PORT, function () {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+  console.log(`App running on port ${PORT}!`);
 });
 
 // const path = require("path");

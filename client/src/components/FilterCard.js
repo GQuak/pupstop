@@ -1,11 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function FilterCard(props) {
-    return (
-                  <div className="card-container">
-
-        <div className="row">
-        {props.filters.map(filter => (
+  return (
+    <div className="card-container">
+      <div className="row">
+        {props.filters.map((filter) => (
           <div className="col-lg-4 card">
             <a href={filter.path}>
               <h3>{filter.name}</h3>
@@ -17,9 +16,9 @@ function FilterCard(props) {
             </a>
           </div>
         ))}
-        </div>
-        </div>
-    );
-};
+      </div>
+    </div>
+  );
+}
 
 export default FilterCard;
