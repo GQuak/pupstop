@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const styles = {
   form: {
@@ -10,6 +10,26 @@ const styles = {
 };
 
 function AddYard() {
+    const [yardState, setYardState] = useState({
+    name: "",
+    description: "",
+    image: "https://drive.google.com/uc?export=view&id=1mpGulhg71VRzcLdwxUV2mBWJrWzPW7sT",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    rate: 0,
+    fence: false,
+    water: false,
+    hasPets: false,
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(yardState);
+  };
+
+
   return (
     <div className="container">
       <div className="row">
@@ -18,6 +38,7 @@ function AddYard() {
           <img
             src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
             style={styles.form}
+            alt="PupStop Logo"
           />
         </div>
         <div className="col-sm-4"></div>
@@ -32,6 +53,7 @@ function AddYard() {
                 className="form-control"
                 id="name-yard"
                 placeholder="Give your yard a name"
+                onChange={(e) => setYardState({ ...yardState, name: (e.target.value)})}
               />
               <label for="description-yard">
                 Give owners a brief description about your yard
@@ -41,6 +63,7 @@ function AddYard() {
                 className="form-control"
                 id="description-yard"
                 placeholder="Yard description"
+                onChange={(e) => setYardState({ ...yardState, description: (e.target.value)})}
               />
               <label for="address-yard">Address</label>
               <input
@@ -48,12 +71,14 @@ function AddYard() {
                 className="form-control"
                 id="address-yard"
                 placeholder="Street"
+                onChange={(e) => setYardState({ ...yardState, address: (e.target.value)})}
               />
               <input
                 type="text"
                 className="form-control"
                 id="city-yard"
                 placeholder="City"
+                onChange={(e) => setYardState({ ...yardState, city: (e.target.value)})}
               />
             </div>
             <div className="form-group">
@@ -62,6 +87,7 @@ function AddYard() {
                 id="state-yard"
                 name="yard-state"
                 style={styles.form}
+                onChange={(e) => setYardState({ ...yardState, state: (e.target.value)})}
               >
                 <option value="AL">Alabama</option>
                 <option value="" disabled selected>
@@ -124,26 +150,29 @@ function AddYard() {
                 className="form-control"
                 id="zip-yard"
                 placeholder="ZIP"
+                onChange={(e) => setYardState({ ...yardState, zip: (e.target.value)})}
               />
               <input
                 type="number"
                 className="form-control"
                 id="rate-yard"
                 placeholder="Hourly Rate"
+                onChange={(e) => setYardState({ ...yardState, rate: (e.target.value)})}
               />
-              <input type="checkbox" id="fence-yard" value="1" />
+              <input type="checkbox" id="fence-yard" value="1" onChange={(e) => setYardState({ ...yardState, fence: (e.target.value)})}/>
               <label for="fence-yard"> My yard has a fence</label>
               <br />
-              <input type="checkbox" id="water-yard" value="1" />
+              <input type="checkbox" id="water-yard" value="1" onChange={(e) => setYardState({ ...yardState, water: (e.target.value)})}/>
               <label for="water-yard">My yard has water available</label>
               <br />
-              <input type="checkbox" id="pets-yard" value="1" />
+              <input type="checkbox" id="pets-yard" value="1" onChange={(e) => setYardState({ ...yardState, hasPets: (e.target.value)})}/>
               <label for="pets-yard">There will be other pets at my yard</label>
               <br></br>
               <button
                 className="btn btn-primary"
                 type="submit"
                 style={styles.form}
+                onClick={handleSubmit}
               >
                 Submit
               </button>

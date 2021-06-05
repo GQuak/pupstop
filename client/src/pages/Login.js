@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const styles = {
   form: {
@@ -10,6 +10,14 @@ const styles = {
 };
 
 function Login() {
+  const [email, setEmail] = useState();
+
+  const [password, setPassword] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -18,6 +26,7 @@ function Login() {
           <img
             src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
             style={styles.form}
+            alt="PupStop Logo"
           />
         </div>
         <div className="col-sm-4"></div>
@@ -25,13 +34,14 @@ function Login() {
       <div className="row">
         <div className="col-sm-4"></div>
         <div className="col-sm-3">
-          <form className="form signup-form">
+          <form className="form signup-form" onSubmit={handleSubmit}>
             <div className="form-group" style={styles.form}>
               <input
                 className="form-input"
                 type="text"
                 id="email-login"
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -40,10 +50,11 @@ function Login() {
                 type="text"
                 id="password-login"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="form-group" style={styles.form}>
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-primary" type="submit" onClick={handleSubmit}>
                 Login
               </button>
             </div>
