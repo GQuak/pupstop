@@ -154,3 +154,8 @@ footer.footer {
     margin-top: 30px;
     border: none;
   }
+
+  .form-group {
+      margin: 5px;
+      padding: 5px;
+  }

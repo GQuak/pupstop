@@ -1,34 +1,72 @@
 import React from "react";
 
+const styles = {
+  form: {
+    width: 300,
+    display: "flex",
+    justifyContent: "center",
+    alignSelf: "center",
+  },
+};
+
 function Signup() {
   return (
-    <div class="row">
-      <div class="col-md-6">
-        <h2>Signup</h2>
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-4"></div>
+        <div className="col-sm-3">
+          <img
+            src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
+            style={styles.form}
+          />
+        </div>
+        <div className="col-sm-4"></div>
+      </div>
 
-        <form class="form signup-form">
-          <div class="form-group">
-            <label for="fname-signup">First Name:</label>
-            <input class="form-input" type="text" id="fname-signup" />
-          </div>
-          <div class="form-group">
-            <label for="lname-signup">Last Name:</label>
-            <input class="form-input" type="text" id="lname-signup" />
-          </div>
-          <div class="form-group">
-            <label for="email-signup">email:</label>
-            <input class="form-input" type="text" id="email-signup" />
-          </div>
-          <div class="form-group">
-            <label for="password-signup">password:</label>
-            <input class="form-input" type="password" id="password-signup" />
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit">
-              signup
-            </button>
-          </div>
-        </form>
+      <div className="row">
+        <div className="col-sm-4"></div>
+        <div className="col-sm-3">
+          <form className="form signup-form">
+            <div className="form-group" style={styles.form}>
+              <input
+                className="form-input"
+                type="text"
+                id="fname-signup"
+                placeholder="First Name"
+              />
+            </div>
+            <div className="form-group" style={styles.form}>
+              <input
+                className="form-input"
+                type="text"
+                id="lname-signup"
+                placeholder="Last Name"
+              />
+            </div>
+            <div className="form-group" style={styles.form}>
+              <input
+                className="form-input"
+                type="text"
+                id="email-signup"
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group" style={styles.form}>
+              <input
+                className="form-input"
+                type="password"
+                id="password-signup"
+                placeholder="Password"
+              />
+            </div>
+            <div className="form-group" style={styles.form}>
+              <button className="btn btn-primary" type="submit">
+                Create my Account
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="col-sm-4"></div>
       </div>
     </div>
   );
