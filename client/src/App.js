@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SearchResult from "./pages/SearchResult";
+import Login from "./pages/Login";
 // import Profile from "./pages/Profile";
 // import MakeReservation from "./pages/MakeReservation";
 // import Signup from "./pages/Signup";
@@ -22,6 +23,7 @@ function App() {
     <Navbar />
       <Route exact path="/" component={Homepage} />
       <Route exact path="/puppyplaydate" component={SearchResult} />
+      <Route exact path="/login" component={Login} />
     <Footer />
     </div>
     </Router>
