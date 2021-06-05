@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AddYard from "./pages/AddYard";
 // import Profile from "./pages/Profile";
-// import MakeReservation from "./pages/MakeReservation";
+import MakeReservation from "./pages/MakeReservation";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // import { SearchProvider } from "./utils/searchContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -22,6 +22,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/addyard" component={AddYard} />
+        <Route exact path="/makereservation" component={MakeReservation} />
         <Footer />
       </div>
     </Router>

@@ -1,25 +1,16 @@
-import React from "react";
+import React from 'react';
+import { render } from 'react-dom';
+import DayTimePicker from '@mooncake-dev/react-day-time-picker';
 
 function MakeReservation() {
-  return (
-    <div id="showcase-wrapper">
-      <div id="myCalendarWrapper"></div>
-      <div id="example">
-        <h3>
-          currentValue:
-          <p id="current-date"></p>
-        </h3>
-        <h3>
-          currentValue.getDay():
-          <p id="current-day"></p>
-        </h3>
-        <h3>
-          currentValue.toDateSring():
-          <p id="current-datestring"></p>
-        </h3>
-      </div>
-    </div>
-  );
+
+  const handleScheduled = dateTime => {
+    console.log('scheduled: ', dateTime);
+  };
+
+    return <DayTimePicker timeSlotSizeMinutes={15} onConfirm={handleScheduled}/>;
+
 }
 
 export default MakeReservation;
+
