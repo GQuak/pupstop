@@ -1,24 +1,39 @@
 import React from "react";
 
-
-
 function Login() {
-    return (
-        <div></div>
-
-{books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
-    )
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-4"></div>
+        <div className="col-sm-3">
+          <form className="form signup-form">
+            <div className="form-group">
+              <input
+                className="form-input"
+                type="text"
+                id="email-login"
+                placeholder="Email"
+              />
+            </div>
+            <div className="form-group">
+              <input
+                className="form-input"
+                type="text"
+                id="password-login"
+                placeholder="Password"
+              />
+            </div>
+            <div className="form-group">
+              <button className="btn btn-primary" type="submit">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+        <div className="col-sm-4"></div>
+      </div>
+    </div>
+  );
 }
+
+export default Login;
