@@ -2,7 +2,7 @@ import React from 'react';
 
 function FilterCard(props) {
     return (
-                  <div className="card-container">
+        <div className="card-container">
 
         <div className="row">
         {props.filters.map(filter => (
