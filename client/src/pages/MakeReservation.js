@@ -13,4 +13,3 @@ function MakeReservation() {
 }
 
 export default MakeReservation;
-
