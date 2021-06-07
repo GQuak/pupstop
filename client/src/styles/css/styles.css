@@ -62,6 +62,7 @@ div.masthead {
     padding-top: 4rem;
     padding-bottom: 8rem;
     opacity: 1;
+    border-radius:50px;
 }
 
 div.masthead .overlay {
@@ -200,6 +201,8 @@ button {
     border-width:5px;  
     border-style:outset;
     border-color: #F6c16C;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
 }
 
 .card {
