@@ -1,9 +1,11 @@
 import React from "react";
-import MoreInfoButton from "../components/MoreInfoButton"
+import Button from "../components/Button"
 import SearchBar from "../components/SearchBar"
 
 
 function YardCard(props) {
+
+
   return (
     <div className="container">
      {props.yards.map(yard => (
@@ -24,7 +26,7 @@ function YardCard(props) {
                   <div className="col-md-10 col-lg-8 col-xl-7 mx-auto"></div>
                 </div>
               
-                <MoreInfoButton>More Info</MoreInfoButton>
+                <Button className="more-info">More Info</Button>
                 </div>
             </a>
           </div>

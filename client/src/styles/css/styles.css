@@ -38,7 +38,7 @@ header.masthead .overlay {
     width: 100%;
     top: 0;
     left: 0;
-    opacity: 0.3;
+    opacity: 0.01;
 }
 
 header.masthead h1 {
@@ -82,16 +82,6 @@ div.masthead h4 {
     /* font-size: 2rem; */
     text-shadow: -2px 2px black;
 }
-
-/* @media (min-width: 768px) {
-    div.masthead {
-        padding-top: 12rem;
-        padding-bottom: 12rem;
-    }
-    div.masthead h1 {
-        font-size: 3rem;
-    }
-} */
 
 .showcase .showcase-text {
     padding: 3rem;
@@ -166,6 +156,7 @@ div.masthead h4 {
 }
 
 footer.footer {
+    position:relative;
     padding-top: 4rem;
     padding-bottom: 4rem;
     text-align: center;
@@ -192,7 +183,7 @@ footer.footer {
     margin: 30px;
 }
 
-.btn {
+.default {
     position:relative;
     width:100px;
     bottom:0px;
@@ -207,7 +198,7 @@ footer.footer {
     text-shadow: 1px 1px black;
 }
 
-.more-info-btn {
+.more-info {
     position:absolute;
     bottom: 0;
     right: 0;
@@ -232,4 +223,8 @@ footer.footer {
 .form-group {
     margin: 5px;
     padding: 5px;
+}
+
+h1.header {
+    text-shadow: 1px 1px black;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../components/Button"
 
 const styles = {
   form: {
@@ -54,9 +55,9 @@ function Login() {
               />
             </div>
             <div className="form-group" style={styles.form}>
-              <button className="btn btn-primary" type="submit" onClick={handleSubmit}>
+            <Button className="default" onClick={handleSubmit}>
                 Login
-              </button>
+              </Button>
             </div>
           </form>
         </div>
