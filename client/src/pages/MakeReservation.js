@@ -6,6 +6,7 @@ function MakeReservation() {
 
   const handleScheduled = dateTime => {
     console.log('scheduled: ', dateTime);
+    window.alert('Appointment Scheduled: ', dateTime);
   };
 
     return <DayTimePicker timeSlotSizeMinutes={15} onConfirm={handleScheduled}/>;
@@ -13,4 +14,3 @@ function MakeReservation() {
 }
 
 export default MakeReservation;
-

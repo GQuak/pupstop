@@ -6,8 +6,9 @@ import SearchResult from "./pages/SearchResult";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import AddYard from "./pages/AddYard";
-// import Profile from "./pages/Profile";
+import Profile from "./pages/Profile";
 import MakeReservation from "./pages/MakeReservation";
+import Yard from "./pages/Yard";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // import { SearchProvider } from "./utils/searchContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -23,6 +24,8 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/addyard" component={AddYard} />
         <Route exact path="/makereservation" component={MakeReservation} />
+        <Route exact path="/profile" component={Profile} />
+        <Route exact path="/yard" component={Yard} />
         <Footer />
       </div>
     </Router>

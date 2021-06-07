@@ -13,10 +13,6 @@ function Homepage() {
       <Header />
       <br />
       <div className="container">
-        <h3>Pup-ular Spots</h3>
-          <YardCard yards={yards} />
-      </div>
-      <div className="container">
         <FilterCard filters={filters} />
     </div>
     <Testimonial testimonials={testimonials}/>
