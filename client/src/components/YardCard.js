@@ -1,9 +1,12 @@
 import React from "react";
 import Button from "../components/Button"
+import SearchBar from "../components/SearchBar"
+
 
 function YardCard(props) {
   return (
     <div className="row">
+    <SearchBar />
       <div className="col-sm-3"></div>
       <div className="col-sm-6">
         <div className="masthead text-white">
