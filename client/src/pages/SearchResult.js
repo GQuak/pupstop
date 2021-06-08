@@ -59,35 +59,38 @@ function SearchResult() {
   console.log(yards.length);
   console.log(yards);
 
-  return (
-    <div>
-      {yards[0].city}
-      {yards[1].city}
-      {yards[2].city}
-      Yards here!
-    </div>
-  );
   // return (
   //   <div>
-  //     {yards.length ? (
-  //       <List>
-  //         {yards.map((yard) => (
-  //           <YardCard key={yard._id}>
-  //             <Link to={"/yards/" + yard._id}>
-  //               <strong>
-  //                 {yard.name} by {yard.user.fname} {yard.user.lname}
-  //               </strong>
-  //             </Link>
-  //             <Button onClick={() => deleteYard(yard._id)} />
-  //           </YardCard>
-  //         ))}
-  //       </List>
-  //     ) : (
-  //       <h3>No Results to Display</h3>
-  //     )}
-  //     ;
+  //     {yards[0].city}
+  //     {yards[1].city}
+  //     {yards[2].city}
+  //     Yards here!
   //   </div>
   // );
+  return (
+    <div>
+      {yards.length ? (
+        <List>
+          {yards.map((yard) => (
+            <YardCard key={yard._id}>
+              <strong>
+                {/* {yard.name} by {yard.user.fname} {yard.user.lname} */}
+              </strong>
+              <Button
+                className="more-info"
+                onClick={() => window.location.replace("/yards/" + yard._id)}
+              >
+                More Info
+              </Button>
+            </YardCard>
+          ))}
+        </List>
+      ) : (
+        <h3>No Results to Display</h3>
+      )}
+      ;
+    </div>
+  );
 }
 
 export default SearchResult;
