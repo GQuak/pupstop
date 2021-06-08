@@ -185,7 +185,7 @@ footer.footer {
 
 .default {
     position:relative;
-    width:100px;
+    /* width:100px; */
     bottom:0px;
     padding: 10px;
     background-color: #E9953d;
@@ -227,4 +227,11 @@ footer.footer {
 
 h1.header {
     text-shadow: 1px 1px black;
+}
+
+.filter-card {
+    /* text-align:center; */
+    color: #00001d;
+    text-decoration:none;
+    margin: 30px;
 }

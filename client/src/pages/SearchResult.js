@@ -4,6 +4,7 @@ import yards from "../yards.json";
 
 
 function SearchResult() {
+    
 // will need to map over search results
     return(
         <YardCard yards={yards} />

@@ -4,7 +4,9 @@ import SearchBar from "../components/SearchBar"
 
 
 function YardCard(props) {
-
+const handleButtonClick = e => {
+        e.preventDefault();
+    }
 
   return (
     <div className="container">
