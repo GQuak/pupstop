@@ -73,9 +73,9 @@ function SearchResult() {
         <List>
           {yards.map((yard) => (
             <YardCard key={yard._id}>
-              <strong>
-                {/* {yard.name} by {yard.user.fname} {yard.user.lname} */}
-              </strong>
+              {/* <strong>
+                {yard.name} by {yard.user.fname} {yard.user.lname}
+              </strong> */}
               <Button
                 className="more-info"
                 onClick={() => window.location.replace("/yards/" + yard._id)}
@@ -88,7 +88,6 @@ function SearchResult() {
       ) : (
         <h3>No Results to Display</h3>
       )}
-      ;
     </div>
   );
 }
