@@ -1,88 +1,149 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import users from "../users.json";
 
 function Profile() {
-    return(
-        <div><div className="container">
-    <div className="row">
-        <div className="col-md-4">
+  return (
+    <div>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
             <div className="row">
-                <img style="height: 250px; width: 250px; margin-left: 50px; margin-top: 50px;"
-                    src="../img/profile{{id}}.png" alt="picture of host" />
+              <img
+                src="https://drive.google.com/uc?export=view&1tYVs1rQcjF_uOK9voDu18aye8Acwfus-"
+                alt="Jenn Greiner"
+              />
             </div>
-        </div>
-        <div className="col-md-8">
+          </div>
+          <div className="col-md-8">
             <div className="row">
-                <div className="col-md-12">
-                    <p style="font-size: xx-large; margin-top: 50px; margin-bottom: 0; font-weight: bolder;">{{fname}}
-                        {{lname}}</p>
-                    <p style="font-weight: bold;"> {{yard.city}} {{yard.state}}</p>
-                    <p>{{yard.name}}</p>
-                    <p> {{yard.description}} </p>
-                </div>
+              <div className="col-md-12">
+                <h1>Jenn Greiner</h1>
+                <p> Denver, CO</p>
+              </div>
             </div>
             <div className="row">
-                <div className="col-md-12">
-                    <ul style="list-style-type: none; padding-left: 0;">
-                        <li><a style="color: #5B95B3;" href="/schedule/:id">Upcoming Guests</a></li>
-                        <li><a style="color: #5B95B3;" href="/addyard">Register a Yard</a></li>
-                        <li><a style="color: #5B95B3;" href="/myreservations">My Reservations</a></li>
+              <div className="col-md-12">
+                <nav className="navbar navbar-expand-lg navbar-light">
+                  <div
+                    className="collapse navbar-collapse"
+                    id="navbarSupportedContent"
+                  >
+                    <ul className="navbar-nav mr-auto">
+                      <li className="nav-item active">
+                        <Link
+                          to="/reviews"
+                          className={
+                            window.location.pathname === "/reviews"
+                              ? "nav-link active"
+                              : "nav-link"
+                          }
+                        >
+                          Reviews
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          to="/profile/edit/:id"
+                          className={
+                            window.location.pathname === "/profile/edit/:id"
+                              ? "nav-link active"
+                              : "nav-link"
+                          }
+                        >
+                          Edit Profile
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          to="/reservations"
+                          className={
+                            window.location.pathname === "/reservations"
+                              ? "nav-link active"
+                              : "nav-link"
+                          }
+                        >
+                          Reservations
+                        </Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link
+                          to="/yards"
+                          className={
+                            window.location.pathname === "/yards"
+                              ? "nav-link active"
+                              : "nav-link"
+                          }
+                        >
+                          Yards
+                        </Link>
+                      </li>
                     </ul>
-                </div>
+                  </div>
+                </nav>
+              </div>
             </div>
 
-            <hr size="10" width="100%" color="black">
-
-{{#if}}
+            <hr size="10" width="100%" color="black" />
             <div className="row">
+              <div className="col-md-12">
+                <p>2 Reviews</p>
+              </div>
+            </div>
+            <div>
+              <div className="row">
                 <div className="col-md-12">
-                    <p style="margin-top: 15px; font-size: x-large; font-weight: bolder;">2 Reviews</p>
+                  <p>04/10/2021</p>
                 </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <p>Jenn Greiner</p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <p>
+                    <img
+                      src="../img/profile1.png"
+                      alt="picture of person leaving review"
+                    />{" "}
+                    Justin was the best host ever! His backyard was very well
+                    maintained and his dog was a gem!
+                  </p>
+                </div>
+              </div>
             </div>
-            <div style="border-style: solid; border-color: black; border-width: 2px;">
-                <div className="row">
-                    <div className="col-md-12">
-                        <p style="margin-bottom: 0;font-weight: bold;">04/10/2021</p>
-                    </div>
+            <div>
+              <div className="row">
+                <div className="col-md-12">
+                  <p>04/09/2021</p>
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <p style="font-weight: bold;">Jenn Greiner</p>
-                    </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <p>Gabe Quakkelaar</p>
                 </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <p><img style="float: left; width: 100px; height: 100px; margin-right: 10px;"
-                                src="../img/profile1.png" alt="picture of person leaving review"> Justin was the best host ever! His backyard was very well
-                            maintained and his dog was a gem!</p>
-                    </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <p>
+                    <img
+                      src="../img/profile3.png"
+                      alt="picture of person leaving review"
+                    />{" "}
+                    Justin is a lousy coder, but a wonderful backyard host. My
+                    dog loved Justin's backyard and we will definitely be coming
+                    back.{" "}
+                  </p>
                 </div>
+              </div>
             </div>
-            <div style="border-style: solid; border-color: black; border-width: 2px;">
-                <div className="row">
-                    <div className="col-md-12">
-                        <p style="margin-bottom: 0; font-weight: bold;">04/09/2021</p>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <p style="font-weight: bold;">Gabe Quakkelaar</p>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-12">
-                        <p><img style="float: left; width: 100px; height: 100px; margin-right: 10px;"
-                                src="../img/profile3.png" alt="picture of person leaving review"> Justin is a lousy coder, but a wonderful backyard host. My
-                            dog
-                            loved Justin's backyard and we will definitely be coming back. </p>
-                    </div>
-                </div>
-            </div>
-
-
+          </div>
         </div>
+      </div>
     </div>
-</div></div>
-    )
+  );
 }
 
 export default Profile;
