@@ -4,6 +4,10 @@ import Button from "../components/Button";
 import yards from "../yards.json";
 
 function Yard(props) {
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    window.location.replace("/makereservation");
+  };
   return (
     <div className="container">
       <div className="masthead text-white">
@@ -34,7 +38,9 @@ function Yard(props) {
         </div>
         <div className="col-md-4">
           <h3>$10 / hour</h3>
-          <Button className="default">Reserve</Button>
+          <Button className="default" onClick={handleButtonClick}>
+            Reserve
+          </Button>
         </div>
       </div>
       <div className="row">

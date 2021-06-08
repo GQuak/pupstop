@@ -29,6 +29,12 @@ function YardCard(props) {
                   <div className="col-md-10 col-lg-8 col-xl-7 mx-auto"></div>
                 </div>
               </div>
+              <Button
+                className="more-info"
+                onClick={() => window.location.replace("/yards/" + props._id)}
+              >
+                More Info
+              </Button>
             </a>
           </div>
           <div className="col-sm-3"></div>
