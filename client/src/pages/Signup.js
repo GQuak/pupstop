@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../components/Button";
 
 const styles = {
   form: {
@@ -15,7 +16,8 @@ function Signup() {
     lname: "",
     email: "",
     password: "",
-    image: "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0"
+    image:
+      "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0",
   });
 
   const handleSubmit = (e) => {
@@ -46,7 +48,9 @@ function Signup() {
                 type="text"
                 id="fname-signup"
                 placeholder="First Name"
-                onChange={(e) => setUserState({ ...userState, fname: (e.target.value)})}
+                onChange={(e) =>
+                  setUserState({ ...userState, fname: e.target.value })
+                }
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -55,7 +59,9 @@ function Signup() {
                 type="text"
                 id="lname-signup"
                 placeholder="Last Name"
-                onChange={(e) => setUserState({ ...userState, lname:(e.target.value)})}
+                onChange={(e) =>
+                  setUserState({ ...userState, lname: e.target.value })
+                }
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -64,7 +70,9 @@ function Signup() {
                 type="text"
                 id="email-signup"
                 placeholder="Email"
-                onChange={(e) => setUserState({ ...userState, email: (e.target.value)})}
+                onChange={(e) =>
+                  setUserState({ ...userState, email: e.target.value })
+                }
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -73,13 +81,15 @@ function Signup() {
                 type="password"
                 id="password-signup"
                 placeholder="Password"
-                onChange={(e) => setUserState({ ...userState, password: (e.target.value)})}
+                onChange={(e) =>
+                  setUserState({ ...userState, password: e.target.value })
+                }
               />
             </div>
             <div className="form-group" style={styles.form}>
-              <button className="btn btn-primary" type="submit" onClick={handleSubmit}>
+              <Button className="default" type="submit" onClick={handleSubmit}>
                 Create my Account
-              </button>
+              </Button>
             </div>
           </form>
         </div>
