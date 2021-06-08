@@ -63,7 +63,7 @@ function Navbar() {
             </li>
           </ul>
           <button
-            classNameName="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarSupportedContent"
