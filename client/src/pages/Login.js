@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "../components/Button"
 
 const styles = {
-  login: {
+  form: {
     width: 300,
     display: "flex",
     justifyContent: "center",
@@ -10,6 +11,14 @@ const styles = {
 };
 
 function Login() {
+  const [email, setEmail] = useState();
+
+  const [password, setPassword] = useState();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -17,7 +26,8 @@ function Login() {
         <div className="col-sm-3">
           <img
             src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
-            style={styles.login}
+            style={styles.form}
+            alt="PupStop Logo"
           />
         </div>
         <div className="col-sm-4"></div>
@@ -25,27 +35,29 @@ function Login() {
       <div className="row">
         <div className="col-sm-4"></div>
         <div className="col-sm-3">
-          <form className="form signup-form">
-            <div className="form-group" style={styles.login}>
+          <form className="form signup-form" onSubmit={handleSubmit}>
+            <div className="form-group" style={styles.form}>
               <input
                 className="form-input"
                 type="text"
                 id="email-login"
                 placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <div className="form-group" style={styles.login}>
+            <div className="form-group" style={styles.form}>
               <input
                 className="form-input"
                 type="text"
                 id="password-login"
                 placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div className="form-group" style={styles.login}>
-              <button className="btn btn-primary" type="submit">
+            <div className="form-group" style={styles.form}>
+            <Button className="default" onClick={handleSubmit}>
                 Login
-              </button>
+              </Button>
             </div>
           </form>
         </div>
@@ -54,7 +66,7 @@ function Login() {
       <div className="row">
         <div className="col-sm-4"></div>
         <div className="col-sm-3">
-          <span style={styles.login}>
+          <span style={styles.form}>
             Don't have an account? <a href="/signup"> Sign up.</a>
           </span>
         </div>

@@ -10,7 +10,7 @@ function SearchBar() {
           
           placeholder="Search for a yard..."
         />
-        <button className="btn btn-success mt-3 mb-5" type="submit">
+        <button className="btn mt-3 mb-5" type="submit">
           Search
         </button>
       </form>

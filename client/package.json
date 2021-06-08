@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@mooncake-dev/react-day-time-picker": "^1.0.5",
     "axios": "^0.18.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

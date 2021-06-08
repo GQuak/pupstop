@@ -1,12 +1,13 @@
 import React from "react";
-import SearchResultCard from "../components/SearchResultCard";
+import YardCard from "../components/YardCard";
 import yards from "../yards.json";
 
 
 function SearchResult() {
+    
 // will need to map over search results
     return(
-        <SearchResultCard yards={yards} />
+        <YardCard yards={yards} />
     )
 }
 
