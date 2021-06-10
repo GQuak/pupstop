@@ -1,25 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import users from "../users.json";
+import Review from "../components/Review";
+import API from "../utils/API";
 
 function Profile() {
+  const [users, setUsers] = useState([]);
+
+  useEffect((id) => {
+    loadUser(id);
+  }, []);
+
+  // Loads all books and sets them to books
+  function loadUser(id) {
+    API.getUser(id)
+      .then((res) => {
+        setUsers(res.data);
+        console.log("User data");
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div>
       <div className="container">
         <div className="row">
           <div className="col-md-4">
             <div className="row">
-              <img
-                src="https://drive.google.com/uc?export=view&1tYVs1rQcjF_uOK9voDu18aye8Acwfus-"
-                alt="Jenn Greiner"
-              />
+              <img src={users.image} alt={users.fname} />
             </div>
           </div>
           <div className="col-md-8">
             <div className="row">
               <div className="col-md-12">
-                <h1>Jenn Greiner</h1>
-                <p> Denver, CO</p>
+                <h1>
+                  {users.fname} {users.lname}
+                </h1>
+                <p>
+                  {" "}
+                  {users.yards.city}, {users.yards.state}
+                </p>
               </div>
             </div>
             <div className="row">
@@ -29,7 +49,7 @@ function Profile() {
                     className="collapse navbar-collapse"
                     id="navbarSupportedContent"
                   >
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav ms-auto">
                       <li className="nav-item active">
                         <Link
                           to="/reviews"
@@ -44,9 +64,10 @@ function Profile() {
                       </li>
                       <li className="nav-item">
                         <Link
-                          to="/profile/edit/:id"
+                          to="/profile/edit/"
                           className={
-                            window.location.pathname === "/profile/edit/:id"
+                            window.location.pathname ===
+                            "/profile/edit/" + users._id
                               ? "nav-link active"
                               : "nav-link"
                           }
@@ -58,7 +79,8 @@ function Profile() {
                         <Link
                           to="/reservations"
                           className={
-                            window.location.pathname === "/reservations"
+                            window.location.pathname ===
+                            "/reservations" + users._id
                               ? "nav-link active"
                               : "nav-link"
                           }
@@ -70,7 +92,7 @@ function Profile() {
                         <Link
                           to="/yards"
                           className={
-                            window.location.pathname === "/yards"
+                            window.location.pathname === "/yard" + users._id
                               ? "nav-link active"
                               : "nav-link"
                           }
@@ -87,58 +109,10 @@ function Profile() {
             <hr size="10" width="100%" color="black" />
             <div className="row">
               <div className="col-md-12">
-                <p>2 Reviews</p>
+                <p>{users.yards.comments.length} Reviews</p>
               </div>
             </div>
-            <div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>04/10/2021</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>Jenn Greiner</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>
-                    <img
-                      src="../img/profile1.png"
-                      alt="picture of person leaving review"
-                    />{" "}
-                    Justin was the best host ever! His backyard was very well
-                    maintained and his dog was a gem!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>04/09/2021</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>Gabe Quakkelaar</p>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-12">
-                  <p>
-                    <img
-                      src="../img/profile3.png"
-                      alt="picture of person leaving review"
-                    />{" "}
-                    Justin is a lousy coder, but a wonderful backyard host. My
-                    dog loved Justin's backyard and we will definitely be coming
-                    back.{" "}
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Review></Review>
           </div>
         </div>
       </div>

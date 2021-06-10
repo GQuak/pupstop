@@ -69,7 +69,7 @@ function Signup() {
 
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-3">
+        <div className="col-sm-4" style={styles.form}>
           <form className="form signup-form">
             <div className="form-group" style={styles.form}>
               <input

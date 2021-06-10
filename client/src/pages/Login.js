@@ -8,6 +8,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
+    textAlign: "center"
   },
 };
 
@@ -21,9 +22,9 @@ function Login() {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row" >
         <div className="col-sm-4"></div>
-        <div className="col-sm-3">
+        <div className="col-sm-4" style={styles.form}>
           <img
             src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
             style={styles.form}
@@ -34,7 +35,7 @@ function Login() {
       </div>
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-3">
+        <div className="col-sm-4"  style={styles.form}>
           <form className="form signup-form" onSubmit={handleSubmit}>
             <div className="form-group" style={styles.form}>
               <input
@@ -65,10 +66,10 @@ function Login() {
       </div>
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-3">
-          <span style={styles.form}>
+        <div className="col-sm-4">
+          <p style={styles.form}>
             Don't have an account? <a href="/signup"> Sign up.</a>
-          </span>
+          </p>
         </div>
         <div className="col-sm-4"></div>
       </div>
