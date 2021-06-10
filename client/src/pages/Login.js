@@ -8,6 +8,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
+    textAlign: "center"
   },
 };
 
@@ -65,10 +66,10 @@ function Login() {
       </div>
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-3">
-          <span style={styles.form}>
+        <div className="col-sm-4 center">
+          <p style={styles.form}>
             Don't have an account? <a href="/signup"> Sign up.</a>
-          </span>
+          </p>
         </div>
         <div className="col-sm-4"></div>
       </div>
