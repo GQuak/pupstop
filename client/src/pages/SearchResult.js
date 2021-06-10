@@ -9,7 +9,11 @@ import { logDOM } from "@testing-library/dom";
 
 function SearchResult() {
   // Setting our component's initial state
-  const [yards, setYards] = useState([{ city: "loading" }]);
+  const [yards, setYards] = useState([{ 
+    name: "loading name",
+    city: "loading city ",
+    state: "loading state"
+    }]);
   const [formObject, setFormObject] = useState({});
 
   // Load all books and store them with setBooks
@@ -68,23 +72,22 @@ function SearchResult() {
   //   </div>
   // );
   return (
+    // <div>
+    // {yards[0].name}
+    // {yards[0].city}
+    // {yards[0].state}
+    // </div>
     <div>
       {yards.length ? (
-        <List>
+        <div>
           {yards.map((yard) => (
-            <YardCard key={yard._id}>
+            <YardCard key={yard._id} name={yard.name} city={yard.city} state={yard.state}>
               {/* <strong>
                 {yard.name} by {yard.user.fname} {yard.user.lname}
               </strong> */}
-              <Button
-                className="more-info"
-                onClick={() => window.location.replace("/yards/" + yard._id)}
-              >
-                More Info
-              </Button>
             </YardCard>
           ))}
-        </List>
+        </div>
       ) : (
         <h3>No Results to Display</h3>
       )}

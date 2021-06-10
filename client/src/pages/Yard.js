@@ -47,13 +47,11 @@ function Yard(props) {
         <h3>Reviews</h3>
       </div>
       <div className="row">
-        <div className="col-md-12">
-          <p>04/10/2021</p>
+        <div className="col-md-6">
+          <p><strong>Justin W</strong></p>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-md-12">
-          <p>Jenn Greiner</p>
+        <div className="col-md-6">
+          <p style={{textAlign:"right"}}>04/10/2021</p>
         </div>
       </div>
       <div className="row">
@@ -61,10 +59,10 @@ function Yard(props) {
           <p>
             <img
               src="../img/profile1.png"
-              alt="picture of person leaving review"
+              alt="Justin W"
             />{" "}
-            Justin was the best host ever! His backyard was very well maintained
-            and his dog was a gem!
+            Jenn was the best host ever! Her backyard was very well maintained
+            and her dog was a gem!
           </p>
         </div>
       </div>

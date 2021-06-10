@@ -34,7 +34,8 @@ function Navbar() {
                     : "nav-link"
                 }
               >
-                Profile
+              {/* change to user's name */}
+                Hey, User
               </Link>
             </li>
             <li className="nav-item">
