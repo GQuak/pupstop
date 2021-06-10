@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/addyard" component={AddYard} />
         <Route exact path="/makereservation" component={MakeReservation} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/yard" component={Yard} />
+        <Route path="/yard" component={Yard} />
         <Footer />
       </div>
     </Router>

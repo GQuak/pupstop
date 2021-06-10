@@ -1,11 +1,11 @@
 import React from "react";
 import Button from "../components/Button";
 
-function YardCard({id, name, city, state}) {
-  // const handleButtonClick = (e) => {
-  //   e.preventDefault();
-  //   window.location.replace("/yards/" + {yard._id})
-  // };
+function YardCard({ id, name, city, state }) {
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    window.location.replace("/yard/" + id);
+  };
 
   return (
     <div className="container">
@@ -13,29 +13,24 @@ function YardCard({id, name, city, state}) {
         <div className="col-sm-3"></div>
         <div className="col-sm-6">
           <div className="masthead text-white">
-            <a href={id}>
-              <div className="overlay"></div>
-              <div className="container">
-                <div className="row">
-                  <div className="col-xl-9 mx-auto">
-                    <h1>{name}</h1>
-                    <h3>Hosted by Jenn Greiner</h3>
-                    <br />
-                    <h4>
-                      {" "}
-                      {city}, {state}{" "}
-                    </h4>
-                  </div>
-                  <div className="col-md-10 col-lg-8 col-xl-7 mx-auto"></div>
+            <div className="overlay"></div>
+            <div className="container">
+              <div className="row">
+                <div className="col-xl-9 mx-auto">
+                  <h1>{name}</h1>
+                  <h3>Hosted by Jenn Greiner</h3>
+                  <br />
+                  <h4>
+                    {" "}
+                    {city}, {state}{" "}
+                  </h4>
                 </div>
+                <div className="col-md-10 col-lg-8 col-xl-7 mx-auto"></div>
               </div>
-              <Button
-                className="more-info"
-                onClick={() => window.location.replace("/yard")}
-              >
-                More Info
-              </Button>
-            </a>
+            </div>
+            <Button className="more-info" onClick={handleButtonClick}>
+              More Info
+            </Button>
           </div>
           <div className="col-sm-3"></div>
         </div>
