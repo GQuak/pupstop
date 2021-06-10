@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../components/Button";
 import API from "../utils/API";
 
 const styles = {
@@ -111,13 +112,9 @@ function Signup() {
               />
             </div>
             <div className="form-group" style={styles.form}>
-              <button
-                className="btn btn-primary"
-                type="submit"
-                onClick={handleSubmit}
-              >
+              <Button className="default" type="submit" onClick={handleSubmit}>
                 Create my Account
-              </button>
+              </Button>
             </div>
           </form>
         </div>

@@ -19,7 +19,7 @@ function App() {
       <div>
         <Navbar />
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/puppyplaydate" component={SearchResult} />
+        <Route path="/searchresults" component={SearchResult} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/addyard" component={AddYard} />

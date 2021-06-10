@@ -34,14 +34,15 @@ function Navbar() {
                     : "nav-link"
                 }
               >
-                Profile
+              {/* change to user's name */}
+                Hey, User
               </Link>
             </li>
             <li className="nav-item">
               <Link
-                to="/yard"
+                to="/searchresults"
                 className={
-                  window.location.pathname === "/yard"
+                  window.location.pathname === "/searchresults"
                     ? "nav-link active"
                     : "nav-link"
                 }
