@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API from "../utils/API";
 
 const styles = {
   form: {
@@ -10,16 +11,45 @@ const styles = {
 };
 
 function Signup() {
-  const [userState, setUserState] = useState({
-    fname: "",
-    lname: "",
-    email: "",
-    password: "",
-    image: "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0"
-  });
+  // const [userState, setUserState] = useState({
+  //   fname: "",
+  //   lname: "",
+  //   email: "",
+  //   password: "",
+  //   image: "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0"
+  // });
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // };
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [formObject, setFormObject] = useState({});
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("submit clicked");
+    console.log(formObject);
+    if (formObject.email && formObject.password) {
+      API.saveUsers({
+        fname: formObject.fname,
+        lname: formObject.lname,
+        email: formObject.email,
+        password: formObject.password,
+      })
+        .then((res) => {
+          console.log("click then ", res.data);
+          // API.getUser(res.data._id);
+          window.location.replace("/");
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (
@@ -45,8 +75,9 @@ function Signup() {
                 className="form-input"
                 type="text"
                 id="fname-signup"
-                placeholder="First Name"
-                onChange={(e) => setUserState({ ...userState, fname: (e.target.value)})}
+                name="fname"
+                placeholder="First Name (required)"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -54,8 +85,9 @@ function Signup() {
                 className="form-input"
                 type="text"
                 id="lname-signup"
-                placeholder="Last Name"
-                onChange={(e) => setUserState({ ...userState, lname:(e.target.value)})}
+                name="lname"
+                placeholder="Last Name (required)"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -63,8 +95,9 @@ function Signup() {
                 className="form-input"
                 type="text"
                 id="email-signup"
-                placeholder="Email"
-                onChange={(e) => setUserState({ ...userState, email: (e.target.value)})}
+                name="email"
+                placeholder="Email (required)"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
@@ -72,12 +105,17 @@ function Signup() {
                 className="form-input"
                 type="password"
                 id="password-signup"
-                placeholder="Password"
-                onChange={(e) => setUserState({ ...userState, password: (e.target.value)})}
+                name="password"
+                placeholder="Password (required)"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
-              <button className="btn btn-primary" type="submit" onClick={handleSubmit}>
+              <button
+                className="btn btn-primary"
+                type="submit"
+                onClick={handleSubmit}
+              >
                 Create my Account
               </button>
             </div>
