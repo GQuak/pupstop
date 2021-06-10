@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="row">
           <div className="col-sm-4"></div>
-          <div className="col-sm-3">
+          <div className="col-sm-4">
             <div className="row">
               <div className="col-3">
                 <a href="https://www.instagram.com/pupstopapp/">
@@ -50,11 +50,14 @@ const Footer = () => {
         </div>
         <br />
         <div className="row">
-        <div className="col-sm-4"></div>
-          <div className="col-sm-3">
-            <p className="small mb-4 mb-lg-0 footer">&copy; PupStop 2021. A Bentley, Maverick, and Charley Production</p>
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
+            <p className="small mb-4 mb-lg-0 footer">
+              &copy; PupStop 2021. <br />A Bentley, Maverick, and Charley
+              Production
+            </p>
           </div>
-        <div className="col-sm-4"></div>
+          <div className="col-sm-4"></div>
         </div>
       </div>
     </footer>

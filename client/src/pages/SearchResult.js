@@ -9,7 +9,13 @@ import { logDOM } from "@testing-library/dom";
 
 function SearchResult() {
   // Setting our component's initial state
-  const [yards, setYards] = useState([{ city: "loading" }]);
+  const [yards, setYards] = useState([
+    {
+      name: "loading name",
+      city: "loading city ",
+      state: "loading state",
+    },
+  ]);
   const [formObject, setFormObject] = useState({});
 
   // Load all books and store them with setBooks
@@ -67,24 +73,33 @@ function SearchResult() {
   );
   // return (
   //   <div>
-  //     {yards.length ? (
-  //       <List>
-  //         {yards.map((yard) => (
-  //           <YardCard key={yard._id}>
-  //             <Link to={"/yards/" + yard._id}>
-  //               <strong>
-  //                 {yard.name} by {yard.user.fname} {yard.user.lname}
-  //               </strong>
-  //             </Link>
-  //             <Button onClick={() => deleteYard(yard._id)} />
-  //           </YardCard>
-  //         ))}
-  //       </List>
-  //     ) : (
-  //       <h3>No Results to Display</h3>
-  //     )}
-  //     ;
+  //     {yards[0].city}
+  //     {yards[1].city}
+  //     {yards[2].city}
+  //     Yards here!
   //   </div>
+  // );
+  // return (
+  // <div>
+  // {yards[0].name}
+  // {yards[0].city}
+  // {yards[0].state}
+  // </div>
+  // <div>
+  //   {yards.length ? (
+  //     <div>
+  //       {yards.map((yard) => (
+  //         <YardCard key={yard._id} name={yard.name} city={yard.city} state={yard.state}>
+  //           {/* <strong>
+  //             {yard.name} by {yard.user.fname} {yard.user.lname}
+  //           </strong> */}
+  //         </YardCard>
+  //       ))}
+  //     </div>
+  //   ) : (
+  //     <h3>No Results to Display</h3>
+  //   )}
+  // </div>
   // );
 }
 
