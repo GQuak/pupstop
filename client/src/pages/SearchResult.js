@@ -62,8 +62,6 @@ function SearchResult() {
   return (
     <div>
       {yards[0].city}
-      {yards[1].city}
-      {yards[2].city}
       Yards here!
     </div>
   );
