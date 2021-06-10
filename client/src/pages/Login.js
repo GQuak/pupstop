@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import Button from "../components/Button"
+import Button from "../components/Button";
+import API from "../utils/API";
 
 const styles = {
   form: {
@@ -12,7 +13,6 @@ const styles = {
 
 function Login() {
   const [email, setEmail] = useState();
-
   const [password, setPassword] = useState();
 
   const handleSubmit = (e) => {
@@ -55,7 +55,7 @@ function Login() {
               />
             </div>
             <div className="form-group" style={styles.form}>
-            <Button className="default" onClick={handleSubmit}>
+              <Button className="default" onClick={handleSubmit}>
                 Login
               </Button>
             </div>
