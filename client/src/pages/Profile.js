@@ -40,7 +40,7 @@ function Profile() {
           </div>
           <div className="col-md-8">
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-md-12 profile">
                 <h1>
                   {users.fname} {users.lname}
                 </h1>
@@ -48,16 +48,16 @@ function Profile() {
               </div>
             </div>
             <div className="row">
-              <div className="col-md-12">
-                <Button onClick={handleReservationsButtonClick}>Reservations</Button>
-                <Button onClick={handleEditButtonClick}>Edit Profile</Button>
+              <div className="col-md-12 profile">
+                <Button className="edit" onClick={handleReservationsButtonClick}>Reservations</Button>
+                <Button className="edit" onClick={handleEditButtonClick}>Edit Profile</Button>
               </div>
             </div>
             <hr />
-            <div className="row">
+            <div className="row profile">
               <Button className="edit" onClick={handleYardButtonClick}>Add Yard</Button>
-            </div>
               <SearchResult />
+            </div>
           </div>
         </div>
       </div>

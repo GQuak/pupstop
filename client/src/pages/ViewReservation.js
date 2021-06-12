@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Button from "../components/Button";
 import { List, ListItem } from "../components/List";
 import API from "../utils/API";
+const dateFormat = require("dateformat");
+
 
 function ViewReservation() {
   const [reservations, setReservations] = useState([]);
@@ -29,6 +31,7 @@ function ViewReservation() {
       .catch((err) => console.log(err));
     
   }, []);
+
 
 // Load yard details on button click
   const handleYardButtonClick = (e) => {
@@ -59,7 +62,7 @@ function ViewReservation() {
                   {reservation.yard_id}
                   </div>
                   <div className="col-lg-4">
-                  {reservation.datetime}</div>
+                  {dateFormat(reservation.datetime, "dddd, mmmm dS, yyyy, h:MM:ss TT")}</div>
                   <Button className="edit" onClick={handleYardButtonClick}>
                       View Yard
                     </Button>
