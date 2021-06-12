@@ -43,7 +43,7 @@ function EditProfile() {
         .then((res) => {
           console.log("click then ", res.data);
           // API.getUser(res.data._id);
-          window.location.replace("/");
+        //   window.location.replace("/profile/" + users._id);
         })
         .catch((err) => console.log(err));
     }

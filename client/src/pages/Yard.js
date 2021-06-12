@@ -1,37 +1,11 @@
 import React, { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { List, ListItem } from "../components/List";
 import API from "../utils/API";
 
 function Yard(props) {
-  // const [yards, setYards] = useState([
-  //   // {
-  //   //   name: "loading name",
-  //   //   city: "loading city ",
-  //   //   state: "loading state",
-  //   // },
-  // ]);
-
-  // useEffect((id) => {
-  //   loadYard(id);
-  // }, []);
-
-  // // Loads all books and sets them to books
-  // function loadYard(id) {
-  //   API.getYard(id)
-  //     .then((res) => {
-  //       setYards(res.data);
-  //       console.log("Yard data");
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
   const [yard, setYard] = useState({});
 
-  // When this component mounts, grab the book with the _id of props.match.params.id
-  // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  // const { id } = useParams();
   const sections = window.location.pathname.split("/");
   const id = sections[sections.length - 1];
   useEffect(() => {

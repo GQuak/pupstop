@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import YardCard from "../components/YardCard";
 import Button from "../components/Button";
-// import yards from "../yards.json";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { List, ListItem } from "../components/List";
@@ -18,12 +17,12 @@ function SearchResult() {
   ]);
   const [formObject, setFormObject] = useState({});
 
-  // Load all books and store them with setBooks
+  // Load all yards and store them with setYards
   useEffect(() => {
     loadYards();
   }, []);
 
-  // Loads all books and sets them to books
+  // Loads all yards and sets them to yards
   function loadYards() {
     API.getYards()
       .then((res) => {
@@ -34,7 +33,7 @@ function SearchResult() {
       .catch((err) => console.log(err));
   }
 
-  // Deletes a book from the database with a given id, then reloads books from the db
+  // Deletes a yard from the database with a given id, then reloads yards from the db
   function deleteYard(id) {
     API.deleteYard(id)
       .then((res) => loadYards())
@@ -46,31 +45,6 @@ function SearchResult() {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   }
-
-  // When the form is submitted, use the API.saveBook method to save the book data
-  // Then reload books from the database
-  // function handleFormSubmit(event) {
-  //   event.preventDefault();
-  //   if (formObject.title && formObject.author) {
-  //     API.saveBook({
-  //       title: formObject.title,
-  //       author: formObject.author,
-  //       synopsis: formObject.synopsis,
-  //     })
-  //       .then((res) => loadBooks())
-  //       .catch((err) => console.log(err));
-  //   }
-  // }
-  console.log("Yards length");
-  console.log(yards.length);
-  console.log(yards);
-
-  // return (
-  //   <div>
-  //     {yards[0].city}
-  //     Yards here!
-  //   </div>
-  // );
 
   return (
     <div>
@@ -84,9 +58,6 @@ function SearchResult() {
               city={yard.city}
               state={yard.state}
             >
-              {/* <strong>
-              {yard.name} by {yard.user.fname} {yard.user.lname}
-            </strong> */}
             </YardCard>
           ))}
         </div>

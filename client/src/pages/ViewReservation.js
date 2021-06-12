@@ -12,14 +12,15 @@ function ViewReservation() {
   const id = sections[sections.length - 1];
   console.log(id);
 
-  // Load all books and store them with setBooks
   useEffect(() => {
+  // Load user with current ID and store them with setUser
     API.getUser(id)
       .then((res) => {
         setUser(res.data);
         console.log("user:", res.data);
       })
       .catch((err) => console.log(err));
+// Load all reservations and store them with setReservations
     API.getReservations()
       .then((res) => {
         setReservations(res.data);
@@ -29,10 +30,14 @@ function ViewReservation() {
     
   }, []);
 
+// Load yard details on button click
   const handleYardButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/yard/" + reservations.yard_id);
   };
+
+  // Load makereservation on button click
+
   const handleEditButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/makereservation/" + reservations._id);

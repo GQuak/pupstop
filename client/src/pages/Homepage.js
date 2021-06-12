@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import YardCard from "../components/YardCard";
 import FilterCard from "../components/FilterCard";
 import Testimonial from "../components/Testimonial";
-import yards from "../yards.json";
 import testimonials from "../testimonials.json";
 import filters from "../filters.json";
 
@@ -16,7 +15,7 @@ function Homepage() {
         <FilterCard filters={filters} />
     </div>
     <Testimonial testimonials={testimonials}/>
-    </div> //closing div, dont touch
+    </div>
   )
 }
 

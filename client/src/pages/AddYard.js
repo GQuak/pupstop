@@ -10,24 +10,46 @@ const styles = {
 };
 
 function AddYard() {
-  const [yardState, setYardState] = useState({
-    name: "",
-    description: "",
-    image:
-      "https://drive.google.com/uc?export=view&id=1mpGulhg71VRzcLdwxUV2mBWJrWzPW7sT",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    rate: 0,
-    fence: false,
-    water: false,
-    hasPets: false,
-  });
+  const [formObject, setFormObject] = useState({});
+  const [users, setUsers] = useState([]);
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
+  // get id for current user
+  const sections = window.location.pathname.split("/");
+  const id = sections[sections.length - 1];
+  useEffect(() => {
+    API.getUser(id)
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(yardState);
+    console.log("submit clicked");
+    console.log(formObject);
+    if (formObject.email && formObject.password) {
+      API.saveUsers({
+        name: formObject.name,
+        description: formObject.description,
+        address: formObject.address,
+        city: formObject.city,
+        state: formObject.state,
+        zip: formObject.zip,
+        fence: formObject.fence,
+        water: formObject.water,
+        hasPets: formObject.hasPets,
+        user_id: users._id,
+      })
+        .then((res) => {
+          console.log("click then ", res.data);
+          // API.getUser(res.data._id);
+          // window.location.replace("/");
+        })
+        .catch((err) => console.log(err));
+    }
   };
 
   return (

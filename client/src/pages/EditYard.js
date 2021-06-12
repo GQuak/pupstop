@@ -28,7 +28,6 @@ function EditYard() {
               type="text"
               id="email-login"
               placeholder="Street"
-              //   onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="form-group" style={styles.form}>
@@ -37,7 +36,6 @@ function EditYard() {
               type="text"
               id="password-login"
               placeholder="City"
-              //   onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="form-group">

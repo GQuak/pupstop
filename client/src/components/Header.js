@@ -2,12 +2,11 @@ import React from "react";
 import Button from "../components/Button";
 
 function Header() {
-  const handlebuttonclick = (e) => {
+  const handleButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/searchresults");
   };
 
-  const handleBack = (e) => {};
   return (
     <header className="masthead text-white text-center">
       <div className="overlay"></div>
@@ -17,7 +16,7 @@ function Header() {
             <h1 className="mb-5 header">Who let the dogs out?</h1>
           </div>
           <div className="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <Button className="default" onClick={handlebuttonclick}>
+            <Button className="default" onClick={handleButtonClick}>
               Find a yard
             </Button>
           </div>

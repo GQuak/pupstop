@@ -16,7 +16,7 @@ function EditReservation() {
   const id = sections[sections.length - 1];
   console.log(id);
 
-  // Load all books and store them with setBooks
+  // Load all reservations and store them with setReservations
   useEffect(() => {
     API.getReservation(id)
       .then((res) => {
