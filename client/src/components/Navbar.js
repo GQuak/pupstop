@@ -25,19 +25,6 @@ function Navbar() {
         </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item active">
-              <Link
-                to="/profile"
-                className={
-                  window.location.pathname === "/profile"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-              {/* change to user's name */}
-                Hey, User
-              </Link>
-            </li>
             <li className="nav-item">
               <Link
                 to="/searchresults"
@@ -48,6 +35,50 @@ function Navbar() {
                 }
               >
                 Find a Yard
+              </Link>
+            </li>
+            {/* conditionally render Hey, users.fname and Login
+            if (req.session.logged_in) {
+            <li className="nav-item active">
+              <Link
+              ADD USER ID TO ROUTE
+                to={location => ({ ...location, pathname: "/profile" + req.session.id})} 
+              className={
+                  window.location.pathname === "/profile"
+                    ? "nav-link active"
+                    : "nav-link"}
+                    >
+              >
+              CHANGE TO USER.FNAME
+                Hey, User
+              </Link>
+            </li>
+            ADD LOGOUT BUTTON
+            } else {
+            <li className="nav-item">
+              <Link
+                to="/login"
+                className={
+                  window.location.pathname === "/login"
+                    ? "nav-link active"
+                    : "nav-link"
+                }
+              >
+                Login
+              </Link>
+              </li>
+            } */}
+              
+            <li className="nav-item active">
+              <Link
+              to="/profile"
+              className={
+                  window.location.pathname === "/profile"
+                    ? "nav-link active"
+                    : "nav-link"}
+                    >
+              {/* change to user's name */}
+                Hey, User
               </Link>
             </li>
             <li className="nav-item">

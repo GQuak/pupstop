@@ -10,14 +10,15 @@ function YardCard({ id, name, city, state }) {
   return (
     <div className="container">
       <div className="row yard-card">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6">
+        <div className="col-sm-1"></div>
+        <div className="col-sm-10">
           <div className="masthead text-white">
             <div className="overlay"></div>
             <div className="container">
               <div className="row">
                 <div className="col-xl-9 mx-auto">
                   <h1>{name}</h1>
+                  {/* UPDATE TO users.fname users.lname */}
                   <h3>Hosted by Jenn Greiner</h3>
                   <br />
                   <h4>
@@ -32,7 +33,7 @@ function YardCard({ id, name, city, state }) {
               More Info
             </Button>
           </div>
-          <div className="col-sm-3"></div>
+          <div className="col-sm-1"></div>
         </div>
       </div>
     </div>

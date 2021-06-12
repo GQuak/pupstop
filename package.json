@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "calendarpickerjs": "^1.4.0",
+    "dateformat": "^4.5.1",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongodb": "^3.6.9",

@@ -4,7 +4,6 @@ module.exports = {
   findAll: function (req, res) {
     console.log("Appointments Controller");
     db.Appointment.find(req.query)
-      // .sort({ date: -1 })
       .then((dbModel) => {
         console.log("dbModel", dbModel);
         res.json(dbModel);

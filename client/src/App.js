@@ -1,4 +1,3 @@
-// import Yard from "./pages/Yard";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -9,9 +8,10 @@ import AddYard from "./pages/AddYard";
 import Profile from "./pages/Profile";
 import MakeReservation from "./pages/MakeReservation";
 import Yard from "./pages/Yard";
-// import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-// import { SearchProvider } from "./utils/searchContext";
+import EditYard from "./pages/EditYard";
+import EditProfile from "./pages/EditProfile";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ViewReservation from "./pages/ViewReservation";
 
 function App() {
   return (
@@ -22,10 +22,13 @@ function App() {
         <Route path="/searchresults" component={SearchResult} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/addyard" component={AddYard} />
-        <Route exact path="/makereservation" component={MakeReservation} />
-        <Route exact path="/profile" component={Profile} />
+        <Route path="/addyard" component={AddYard} />
+        <Route path="/makereservation" component={MakeReservation} />
+        <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
+        <Route path="/reservations" component={ViewReservation} />
+        <Route path="/edit/yard" component={EditYard} />
+        <Route path="/edit/profile" component={EditProfile} />
         <Footer />
       </div>
     </Router>
