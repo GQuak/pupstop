@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/addyard" component={AddYard} />
-        <Route exact path="/makereservation" component={MakeReservation} />
+        <Route path="/makereservation" component={MakeReservation} />
         <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
         <Route path="/reservations" component={ViewReservation} />
