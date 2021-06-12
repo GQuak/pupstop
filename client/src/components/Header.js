@@ -6,6 +6,8 @@ function Header() {
     e.preventDefault();
     window.location.replace("/searchresults");
   };
+
+  const handleBack = (e) => {};
   return (
     <header className="masthead text-white text-center">
       <div className="overlay"></div>

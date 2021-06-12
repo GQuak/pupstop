@@ -9,9 +9,11 @@ import AddYard from "./pages/AddYard";
 import Profile from "./pages/Profile";
 import MakeReservation from "./pages/MakeReservation";
 import Yard from "./pages/Yard";
+import EditYard from "./pages/EditYard";
 // import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 // import { SearchProvider } from "./utils/searchContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import ViewReservation from "./pages/ViewReservation";
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/addyard" component={AddYard} />
         <Route exact path="/makereservation" component={MakeReservation} />
-        <Route exact path="/profile" component={Profile} />
+        <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
+        <Route path="/reservations" component={ViewReservation} />
+        <Route path="/edit" component={EditYard} />
         <Footer />
       </div>
     </Router>

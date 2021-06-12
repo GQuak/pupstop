@@ -6,20 +6,28 @@ import API from "../utils/API";
 function Profile() {
   const [users, setUsers] = useState([]);
 
-  useEffect((id) => {
-    loadUser(id);
+  const sections = window.location.pathname.split("/");
+  const id = sections[sections.length - 1];
+  useEffect(() => {
+    API.getUser(id)
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.log(err));
   }, []);
 
-  // Loads all books and sets them to books
-  function loadUser(id) {
-    API.getUser(id)
-      .then((res) => {
-        setUsers(res.data);
-        console.log("User data");
-        console.log(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
+  // useEffect((id) => {
+  //   loadUser(id);
+  // }, []);
+
+  // // Loads all books and sets them to books
+  // function loadUser(id) {
+  //   API.getUser(id)
+  //     .then((res) => {
+  //       setUsers(res.data);
+  //       console.log("User data");
+  //       console.log(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }
 
   return (
     <div>
@@ -36,10 +44,7 @@ function Profile() {
                 <h1>
                   {users.fname} {users.lname}
                 </h1>
-                <p>
-                  {" "}
-                  {users.yards.city}, {users.yards.state}
-                </p>
+                <p> {/* {users.yards.city}, {users.yards.state} */}</p>
               </div>
             </div>
             <div className="row">
@@ -109,7 +114,7 @@ function Profile() {
             <hr size="10" width="100%" color="black" />
             <div className="row">
               <div className="col-md-12">
-                <p>{users.yards.comments.length} Reviews</p>
+                {/* <p>{users.yards.comments.length} Reviews</p> */}
               </div>
             </div>
             <Review></Review>
