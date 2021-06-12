@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Button from "../components/Button";
+import API from "../utils/API";
 
 const styles = {
   form: {
@@ -30,8 +32,8 @@ function AddYard() {
     e.preventDefault();
     console.log("submit clicked");
     console.log(formObject);
-    if (formObject.email && formObject.password) {
-      API.saveUsers({
+    if (formObject.name && formObject.description && formObject.address && formObject.city && formObject.state && formObject.zip) {
+      API.saveYard({
         name: formObject.name,
         description: formObject.description,
         address: formObject.address,
@@ -41,7 +43,7 @@ function AddYard() {
         fence: formObject.fence,
         water: formObject.water,
         hasPets: formObject.hasPets,
-        user_id: users._id,
+        // user_id: users._id,
       })
         .then((res) => {
           console.log("click then ", res.data);
@@ -73,11 +75,9 @@ function AddYard() {
               <input
                 type="text"
                 className="form-control"
-                id="name-yard"
+                id="name-yard"                name="name"
                 placeholder="Give your yard a name"
-                onChange={(e) =>
-                  setYardState({ ...yardState, name: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <label for="description-yard">
                 Give owners a brief description about your yard
@@ -86,40 +86,34 @@ function AddYard() {
                 type="text"
                 className="form-control"
                 id="description-yard"
+                name="description"
                 placeholder="Yard description"
-                onChange={(e) =>
-                  setYardState({ ...yardState, description: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <label for="address-yard">Address</label>
               <input
                 type="text"
                 className="form-control"
                 id="address-yard"
+                name="address"
                 placeholder="Street"
-                onChange={(e) =>
-                  setYardState({ ...yardState, address: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <input
                 type="text"
                 className="form-control"
-                id="city-yard"
+                id="city-yard"                name="city"
                 placeholder="City"
-                onChange={(e) =>
-                  setYardState({ ...yardState, city: e.target.value })
-                }
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group">
               <select
                 className="form-input"
                 id="state-yard"
-                name="yard-state"
+                name="state"
                 style={styles.form}
-                onChange={(e) =>
-                  setYardState({ ...yardState, state: e.target.value })
-                }
+                onChange={handleInputChange}
               >
                 <option value="AL">Alabama</option>
                 <option value="" disabled selected>
@@ -180,59 +174,48 @@ function AddYard() {
               <input
                 type="text"
                 className="form-control"
-                id="zip-yard"
+                id="zip-yard"                name="zip"
                 placeholder="ZIP"
-                onChange={(e) =>
-                  setYardState({ ...yardState, zip: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <input
                 type="number"
                 className="form-control"
-                id="rate-yard"
+                id="rate-yard"                name="rate"
                 placeholder="Hourly Rate"
-                onChange={(e) =>
-                  setYardState({ ...yardState, rate: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <input
                 type="checkbox"
-                id="fence-yard"
+                id="fence-yard"               name="fence"
                 value="1"
-                onChange={(e) =>
-                  setYardState({ ...yardState, fence: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <label for="fence-yard"> My yard has a fence</label>
               <br />
               <input
                 type="checkbox"
-                id="water-yard"
+                id="water-yard"                name="water"
                 value="1"
-                onChange={(e) =>
-                  setYardState({ ...yardState, water: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <label for="water-yard">My yard has water available</label>
               <br />
               <input
                 type="checkbox"
-                id="pets-yard"
+                id="pets-yard"                name="hasPets"
+
                 value="1"
-                onChange={(e) =>
-                  setYardState({ ...yardState, hasPets: e.target.value })
-                }
+                onChange={handleInputChange}
               />
               <label for="pets-yard">There will be other pets at my yard</label>
               <br></br>
-              <button
-                className="btn btn-primary"
-                type="submit"
-                style={styles.form}
+              <Button
+                className="default"
                 onClick={handleSubmit}
               >
                 Submit
-              </button>
+              </Button>
             </div>
           </form>
         </div>

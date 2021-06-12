@@ -24,7 +24,7 @@ function Profile() {
   };
   const handleYardButtonClick = (e) => {
     e.preventDefault();
-    window.location.replace("/edit/yard/" + id);
+    window.location.replace("/addyard/" + id);
   };
 
 
@@ -50,8 +50,11 @@ function Profile() {
               <div className="col-md-12">
                 <Button onClick={handleReservationsButtonClick}>Reservations</Button>
                 <Button onClick={handleEditButtonClick}>Edit Profile</Button>
-                <Button onClick={handleYardButtonClick}>My Yards</Button>
               </div>
+            </div>
+            <div className="row">
+
+<Button onClick={handleYardButtonClick}>Add Yard</Button>
             </div>
           </div>
         </div>

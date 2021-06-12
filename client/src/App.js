@@ -22,7 +22,7 @@ function App() {
         <Route path="/searchresults" component={SearchResult} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/addyard" component={AddYard} />
+        <Route path="/addyard" component={AddYard} />
         <Route path="/makereservation" component={MakeReservation} />
         <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
