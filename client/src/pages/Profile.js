@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Review from "../components/Review";
+import Button from "../components/Button";
 import API from "../utils/API";
 
 function Profile() {
@@ -13,21 +13,12 @@ function Profile() {
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
+  
+  const handleButtonClick = (e) => {
+    e.preventDefault();
+    window.location.replace("/reservations/" + id);
+  };
 
-  // useEffect((id) => {
-  //   loadUser(id);
-  // }, []);
-
-  // // Loads all books and sets them to books
-  // function loadUser(id) {
-  //   API.getUser(id)
-  //     .then((res) => {
-  //       setUsers(res.data);
-  //       console.log("User data");
-  //       console.log(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
 
   return (
     <div>
@@ -49,6 +40,7 @@ function Profile() {
             </div>
             <div className="row">
               <div className="col-md-12">
+                <Button onClick={handleButtonClick}>Reservations</Button>
                 <nav className="navbar navbar-expand-lg navbar-light">
                   <div
                     className="collapse navbar-collapse"
@@ -117,7 +109,6 @@ function Profile() {
                 {/* <p>{users.yards.comments.length} Reviews</p> */}
               </div>
             </div>
-            <Review></Review>
           </div>
         </div>
       </div>

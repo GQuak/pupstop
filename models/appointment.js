@@ -10,7 +10,7 @@ const appointmentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Yard",
   },
-  date: { type: Date },
+  datetime: { type: Date },
 });
 
 const Appointment = mongoose.model("Appointment", appointmentSchema);

@@ -26,7 +26,7 @@ function MakeReservation() {
     console.log(dateTime);
     if (dateTime) {
       API.saveReservation({
-        date: dateTime,
+        datetime: dateTime,
         // user_id: req.session.id
         yard_id: id
       })
