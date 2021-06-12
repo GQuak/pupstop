@@ -14,9 +14,17 @@ function Profile() {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleButtonClick = (e) => {
+  const handleReservationsButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/reservations/" + id);
+  };
+  const handleEditButtonClick = (e) => {
+    e.preventDefault();
+    window.location.replace("/edit/profile/" + id);
+  };
+  const handleYardButtonClick = (e) => {
+    e.preventDefault();
+    window.location.replace("/edit/yard/" + id);
   };
 
 
@@ -40,54 +48,9 @@ function Profile() {
             </div>
             <div className="row">
               <div className="col-md-12">
-                <Button onClick={handleButtonClick}>Reservations</Button>
-                <nav className="navbar navbar-expand-lg navbar-light">
-                  <div
-                    className="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                  >
-                    <ul className="navbar-nav ms-auto">
-                      <li className="nav-item">
-                        <Link
-                          to="/profile/edit/"
-                          className={
-                            window.location.pathname ===
-                            "/profile/edit/" + users._id
-                              ? "nav-link active"
-                              : "nav-link"
-                          }
-                        >
-                          Edit Profile
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          to="/reservations"
-                          className={
-                            window.location.pathname ===
-                            "/reservations" + users._id
-                              ? "nav-link active"
-                              : "nav-link"
-                          }
-                        >
-                          Reservations
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          to="/yards"
-                          className={
-                            window.location.pathname === "/yard" + users._id
-                              ? "nav-link active"
-                              : "nav-link"
-                          }
-                        >
-                          Yards
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </nav>
+                <Button onClick={handleReservationsButtonClick}>Reservations</Button>
+                <Button onClick={handleEditButtonClick}>Edit Profile</Button>
+                <Button onClick={handleYardButtonClick}>My Yards</Button>
               </div>
             </div>
           </div>

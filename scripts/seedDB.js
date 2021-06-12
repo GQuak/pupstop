@@ -28,6 +28,7 @@ const userSeed = [
     lname: "Quakkelaar",
     email: "gabe.quakkelaar@gmail.com",
     password: "password12345",
+    image: "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0"
   },
   {
     // id: "2",
@@ -35,6 +36,7 @@ const userSeed = [
     lname: "Westmoreland",
     email: "justinrwestmoreland@gmail.com",
     password: "password12345",
+    image: "https://drive.google.com/uc?export=view&1xrm9Im28vcV52GVtIHmB3dR-wSmEYWp2"
   },
   {
     // id: "1",
@@ -42,6 +44,7 @@ const userSeed = [
     lname: "Greiner",
     email: "jenn.greiner1@gmail.com",
     password: "password12345",
+    image: "https://drive.google.com/uc?export=view&1tYVs1rQcjF_uOK9voDu18aye8Acwfus-"
   },
 ];
 

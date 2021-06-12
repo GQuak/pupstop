@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../components/Button";
 import API from "../utils/API";
 
@@ -11,24 +11,34 @@ const styles = {
   },
 };
 
-function Signup() {
+function EditProfile() {
+    
   const [formObject, setFormObject] = useState({});
+  const [users, setUsers] = useState([]);
+
+  const sections = window.location.pathname.split("/");
+  const id = sections[sections.length - 1];
+  useEffect(() => {
+    API.getUser(id)
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   }
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit clicked");
     console.log(formObject);
-    if (formObject.email && formObject.password) {
-      API.saveUsers({
+      API.updateUsers({
         fname: formObject.fname,
         lname: formObject.lname,
         email: formObject.email,
-        password: formObject.password,
+        // image: 
       })
         .then((res) => {
           console.log("click then ", res.data);
@@ -37,7 +47,6 @@ function Signup() {
         })
         .catch((err) => console.log(err));
     }
-  };
 
   return (
     <div className="container">
@@ -63,7 +72,7 @@ function Signup() {
                 type="text"
                 id="fname-signup"
                 name="fname"
-                placeholder="First Name (required)"
+                placeholder={users.fname}
                 onChange={handleInputChange}
               />
             </div>
@@ -73,7 +82,7 @@ function Signup() {
                 type="text"
                 id="lname-signup"
                 name="lname"
-                placeholder="Last Name (required)"
+                placeholder={users.lname}
                 onChange={handleInputChange}
               />
             </div>
@@ -83,23 +92,13 @@ function Signup() {
                 type="text"
                 id="email-signup"
                 name="email"
-                placeholder="Email (required)"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="form-group" style={styles.form}>
-              <input
-                className="form-input"
-                type="password"
-                id="password-signup"
-                name="password"
-                placeholder="Password (required)"
+                placeholder={users.email}
                 onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
               <Button className="default" type="submit" onClick={handleSubmit}>
-                Create my Account
+                Save Changes
               </Button>
             </div>
           </form>
@@ -107,7 +106,7 @@ function Signup() {
         <div className="col-sm-4"></div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Signup;
+export default EditProfile;

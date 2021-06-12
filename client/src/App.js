@@ -1,4 +1,3 @@
-// import Yard from "./pages/Yard";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,6 +9,7 @@ import Profile from "./pages/Profile";
 import MakeReservation from "./pages/MakeReservation";
 import Yard from "./pages/Yard";
 import EditYard from "./pages/EditYard";
+import EditProfile from "./pages/EditProfile";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ViewReservation from "./pages/ViewReservation";
 
@@ -27,7 +27,8 @@ function App() {
         <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
         <Route path="/reservations" component={ViewReservation} />
-        <Route path="/edit" component={EditYard} />
+        <Route path="/edit/yard" component={EditYard} />
+        <Route path="/edit/profile" component={EditProfile} />
         <Footer />
       </div>
     </Router>
