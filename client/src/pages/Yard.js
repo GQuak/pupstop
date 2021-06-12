@@ -39,6 +39,9 @@ function Yard(props) {
       </div>{" "}
       <div className="row">
         <div className="col-md-8">
+        <h3>Description</h3>
+        {yard.description}
+        <hr />
           <List>
             <h3>Features</h3>
             {yard.water ? <ListItem>Has Water</ListItem> : <p></p>}

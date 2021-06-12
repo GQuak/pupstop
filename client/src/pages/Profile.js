@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import SearchResult from "../pages/SearchResult";
 import API from "../utils/API";
 
 function Profile() {
@@ -52,10 +53,11 @@ function Profile() {
                 <Button onClick={handleEditButtonClick}>Edit Profile</Button>
               </div>
             </div>
+            <hr />
             <div className="row">
-
-<Button onClick={handleYardButtonClick}>Add Yard</Button>
+              <Button className="edit" onClick={handleYardButtonClick}>Add Yard</Button>
             </div>
+              <SearchResult />
           </div>
         </div>
       </div>

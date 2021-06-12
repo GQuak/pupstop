@@ -10,8 +10,8 @@ function YardCard({ id, name, city, state }) {
   return (
     <div className="container">
       <div className="row yard-card">
-        <div className="col-sm-3"></div>
-        <div className="col-sm-6">
+        <div className="col-sm-1"></div>
+        <div className="col-sm-10">
           <div className="masthead text-white">
             <div className="overlay"></div>
             <div className="container">
@@ -32,7 +32,7 @@ function YardCard({ id, name, city, state }) {
               More Info
             </Button>
           </div>
-          <div className="col-sm-3"></div>
+          <div className="col-sm-1"></div>
         </div>
       </div>
     </div>
