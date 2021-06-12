@@ -42,19 +42,19 @@ function Navbar() {
             <li className="nav-item active">
               <Link
               ADD USER ID TO ROUTE
-                to="/profile"
-                className={
-                  window.location.pathname === "/profile" + req.session.id
+                to={location => ({ ...location, pathname: "/profile" + req.session.id})} 
+              className={
+                  window.location.pathname === "/profile"
                     ? "nav-link active"
-                    : "nav-link"
-                }
+                    : "nav-link"}
+                    >
               >
               CHANGE TO USER.FNAME
                 Hey, User
               </Link>
             </li>
+            ADD LOGOUT BUTTON
             } else {
-            </li>
             <li className="nav-item">
               <Link
                 to="/login"
@@ -71,13 +71,12 @@ function Navbar() {
               
             <li className="nav-item active">
               <Link
-                to="/profile"
-                className={
+              to="/profile"
+              className={
                   window.location.pathname === "/profile"
                     ? "nav-link active"
-                    : "nav-link"
-                }
-              >
+                    : "nav-link"}
+                    >
               {/* change to user's name */}
                 Hey, User
               </Link>

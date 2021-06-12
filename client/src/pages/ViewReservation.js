@@ -37,7 +37,7 @@ function ViewReservation() {
   const handleYardButtonClick = (e) => {
     e.preventDefault();
     // FIX SO yard_id IS UNIQUE TO BUTTON
-    window.location.replace("/yard/" + reservations.yard_id);
+    window.location.replace("/yard/" + id);
   };
 
   // Load makereservation on button click
@@ -69,7 +69,7 @@ function ViewReservation() {
                   <Button className="edit" onClick={handleYardButtonClick}>
                       View Yard
                     </Button>
-                  <Button className="edit" onClick={handleEditButtonClick}>
+                  <Button className="edit" id={reservation.yard_id} onClick={handleEditButtonClick}>
                       Edit
                     </Button>
               </div>
