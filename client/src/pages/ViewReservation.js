@@ -16,7 +16,7 @@ function ViewReservation() {
     API.getReservation(id)
       .then((res) => {
         setReservations(res.data);
-        console.log(res.data);
+        console.log("reservations data: ", res.data);
       })
       .catch((err) => console.log(err));
     // API.getUser(id)

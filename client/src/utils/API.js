@@ -61,20 +61,20 @@ export default {
 
   // Gets all Reservations
   getReservations: function () {
-    let var1 = axios.get("/api/reservation");
+    let var1 = axios.get("/api/reservations");
     console.log("axios", var1);
     return var1;
   },
   // Gets the yard with the given id
   getReservation: function (id) {
-    return axios.get("/api/reservation/" + id);
+    return axios.get("/api/reservations/" + id);
   },
   // Deletes the yard with the given id
   deleteReservation: function (id) {
-    return axios.delete("/api/reservation/" + id);
+    return axios.delete("/api/reservations/" + id);
   },
   // Saves a yard to the database
   saveReservation: function (reservationData) {
-    return axios.post("/api/reservation", reservationData);
+    return axios.post("/api/reservations", reservationData);
   },
 };
