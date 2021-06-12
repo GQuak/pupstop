@@ -4,6 +4,7 @@ body {
 .profile {
     padding: 5px;
 }
+
 h1,
 h2,
 h3,
@@ -87,12 +88,6 @@ div.masthead h4 {
     text-shadow: -2px 2px black;
 }
 
-
-@media (min-width: 768px) {
-    .showcase .showcase-text {
-        padding: 7rem;
-    }
-}
 
 .icon {
     width: 40px;
