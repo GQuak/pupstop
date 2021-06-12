@@ -13,7 +13,7 @@ function Profile() {
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
-  
+
   const handleButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/reservations/" + id);
@@ -47,18 +47,6 @@ function Profile() {
                     id="navbarSupportedContent"
                   >
                     <ul className="navbar-nav ms-auto">
-                      <li className="nav-item active">
-                        <Link
-                          to="/reviews"
-                          className={
-                            window.location.pathname === "/reviews"
-                              ? "nav-link active"
-                              : "nav-link"
-                          }
-                        >
-                          Reviews
-                        </Link>
-                      </li>
                       <li className="nav-item">
                         <Link
                           to="/profile/edit/"
@@ -100,13 +88,6 @@ function Profile() {
                     </ul>
                   </div>
                 </nav>
-              </div>
-            </div>
-
-            <hr size="10" width="100%" color="black" />
-            <div className="row">
-              <div className="col-md-12">
-                {/* <p>{users.yards.comments.length} Reviews</p> */}
               </div>
             </div>
           </div>

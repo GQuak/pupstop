@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 // import { useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { List, ListItem } from "../components/List";
-import Review from "../components/Review";
 import API from "../utils/API";
 
 function Yard(props) {
@@ -80,10 +79,6 @@ function Yard(props) {
           </Button>
         </div>
       </div>
-      <div className="row">
-        <h3>Reviews</h3>
-      </div>
-      <Review></Review>
     </div>
   );
 }

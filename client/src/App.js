@@ -10,8 +10,6 @@ import Profile from "./pages/Profile";
 import MakeReservation from "./pages/MakeReservation";
 import Yard from "./pages/Yard";
 import EditYard from "./pages/EditYard";
-// import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-// import { SearchProvider } from "./utils/searchContext";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ViewReservation from "./pages/ViewReservation";
 
