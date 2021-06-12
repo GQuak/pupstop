@@ -10,7 +10,6 @@ const appointmentSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Yard",
   },
-  num_pets: { Number, default: 0 },
   date: { type: Date },
 });
 
