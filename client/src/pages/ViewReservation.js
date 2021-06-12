@@ -36,6 +36,7 @@ function ViewReservation() {
 // Load yard details on button click
   const handleYardButtonClick = (e) => {
     e.preventDefault();
+    // FIX SO yard_id IS UNIQUE TO BUTTON
     window.location.replace("/yard/" + reservations.yard_id);
   };
 
@@ -43,6 +44,7 @@ function ViewReservation() {
 
   const handleEditButtonClick = (e) => {
     e.preventDefault();
+        // FIX SO _id IS UNIQUE TO BUTTON
     window.location.replace("/makereservation/" + reservations._id);
   };
 
@@ -59,6 +61,7 @@ function ViewReservation() {
               <ListItem>
               <div className="row">
                   <div className="col-lg-4">
+                  {/* UPDATE TO yard.name */}
                   {reservation.yard_id}
                   </div>
                   <div className="col-lg-4">

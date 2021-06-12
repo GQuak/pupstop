@@ -32,6 +32,7 @@ function AddYard() {
     e.preventDefault();
     console.log("submit clicked");
     console.log(formObject);
+    // FIX POST ROUTE
     if (formObject.name && formObject.description && formObject.address && formObject.city && formObject.state && formObject.zip) {
       API.saveYard({
         name: formObject.name,
@@ -102,7 +103,8 @@ function AddYard() {
               <input
                 type="text"
                 className="form-control"
-                id="city-yard"                name="city"
+                id="city-yard"
+                name="city"
                 placeholder="City"
                 onChange={handleInputChange}
               />
@@ -174,20 +176,23 @@ function AddYard() {
               <input
                 type="text"
                 className="form-control"
-                id="zip-yard"                name="zip"
+                id="zip-yard"
+                name="zip"
                 placeholder="ZIP"
                 onChange={handleInputChange}
               />
               <input
                 type="number"
                 className="form-control"
-                id="rate-yard"                name="rate"
+                id="rate-yard"
+                name="rate"
                 placeholder="Hourly Rate"
                 onChange={handleInputChange}
               />
               <input
                 type="checkbox"
-                id="fence-yard"               name="fence"
+                id="fence-yard"
+                name="fence"
                 value="1"
                 onChange={handleInputChange}
               />
@@ -195,7 +200,8 @@ function AddYard() {
               <br />
               <input
                 type="checkbox"
-                id="water-yard"                name="water"
+                id="water-yard"
+                name="water"
                 value="1"
                 onChange={handleInputChange}
               />
@@ -203,8 +209,8 @@ function AddYard() {
               <br />
               <input
                 type="checkbox"
-                id="pets-yard"                name="hasPets"
-
+                id="pets-yard"
+                name="hasPets"
                 value="1"
                 onChange={handleInputChange}
               />

@@ -48,6 +48,7 @@ function SearchResult() {
 
   return (
     <div>
+    {/* ADD FILTERS */}
       {yards.length ? (
         <div>
           {yards.map((yard) => (

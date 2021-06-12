@@ -35,6 +35,7 @@ function Profile() {
         <div className="row">
           <div className="col-md-4">
             <div className="row">
+            {/* FIX IMAGE URL */}
               <img src={users.image} alt={users.fname} />
             </div>
           </div>
@@ -56,6 +57,7 @@ function Profile() {
             <hr />
             <div className="row profile">
               <Button className="edit" onClick={handleYardButtonClick}>Add Yard</Button>
+              {/* ONLY DISPLAY YARDS OWNED BY CURRENT USER */}
               <SearchResult />
             </div>
           </div>

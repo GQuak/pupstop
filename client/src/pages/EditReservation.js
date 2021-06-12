@@ -12,6 +12,7 @@ function EditReservation() {
     window.alert("Appointment Scheduled: ", dateTime);
   };
 
+// UPDATE RESERVATION BY ID
   const sections = window.location.pathname.split("/");
   const id = sections[sections.length - 1];
   console.log(id);

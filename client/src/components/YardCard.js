@@ -18,6 +18,7 @@ function YardCard({ id, name, city, state }) {
               <div className="row">
                 <div className="col-xl-9 mx-auto">
                   <h1>{name}</h1>
+                  {/* UPDATE TO users.fname users.lname */}
                   <h3>Hosted by Jenn Greiner</h3>
                   <br />
                   <h4>

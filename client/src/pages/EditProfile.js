@@ -34,6 +34,7 @@ function EditProfile() {
     e.preventDefault();
     console.log("submit clicked");
     console.log(formObject);
+    // FIX PUT/POST ROUTE TO UPDATE CURRENT USER
       API.updateUsers({
         fname: formObject.fname,
         lname: formObject.lname,
