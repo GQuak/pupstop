@@ -8,29 +8,21 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   image: { type: String, required: false },
+  yard_id: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Yard",
+    },
+  ],
 });
 
-userSchema.pre("save", function hashPassword(next) {
-  if (this.isModified("password")) {
-    this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(8));
-  }
+// Hashes password automatically
+userSchema.pre("save", async function (next) {
+  const bcryptSalt = 10;
+  const hash = await bcrypt.hash(this.password, Number(bcryptSalt));
+  this.password = hash;
   next();
 });
-
-// userSchema
-//   .virtual("passwordConfirmation")
-//   .set(function setPasswordConfirmation(passwordConfirmation) {
-//     this._passwordConfirmation = passwordConfirmation;
-//   });
-
-// userSchema.pre("validate", function checkPassword(next) {
-//   if (
-//     this.isModified("password") &&
-//     this._passwordConfirmation !== this.password
-//   )
-//     this.invalidate("passwordConfirmation", "does not match");
-//   next();
-// });
 
 userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
