@@ -28,7 +28,8 @@ const userSeed = [
     lname: "Quakkelaar",
     email: "gabe.quakkelaar@gmail.com",
     password: "password12345",
-    image: "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0"
+    image:
+      "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0",
   },
   {
     // id: "2",
@@ -36,7 +37,8 @@ const userSeed = [
     lname: "Westmoreland",
     email: "justinrwestmoreland@gmail.com",
     password: "password12345",
-    image: "https://drive.google.com/uc?export=view&1xrm9Im28vcV52GVtIHmB3dR-wSmEYWp2"
+    image:
+      "https://drive.google.com/uc?export=view&1xrm9Im28vcV52GVtIHmB3dR-wSmEYWp2",
   },
   {
     // id: "1",
@@ -44,7 +46,8 @@ const userSeed = [
     lname: "Greiner",
     email: "jenn.greiner1@gmail.com",
     password: "password12345",
-    image: "https://drive.google.com/uc?export=view&1tYVs1rQcjF_uOK9voDu18aye8Acwfus-"
+    image:
+      "https://drive.google.com/uc?export=view&1tYVs1rQcjF_uOK9voDu18aye8Acwfus-",
   },
 ];
 
@@ -147,219 +150,127 @@ const appointmentSeed = [
 ];
 
 // Add seed users to the DB
+// db.User.remove({})
+//   .then(() =>
+//     db.User.create({
+//       // id: "3",
+//       fname: "Gabe",
+//       lname: "Quakkelaar",
+//       email: "gabe.quakkelaar@gmail.com",
+//       password: "password12345",
+//       image:
+//         "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0",
+//     })
+//   )
+//   .then((data) => {
+//     console.log(data.result.n + " user records inserted!");
+//     // process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
+
+// Add seed users to the DB
 db.User.remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
-  .then((data) => {
-    console.log(data.result.n + " user records inserted!");
+  .then(() =>
+    db.User.create({
+      fname: "Gabe",
+      lname: "Quakkelaar",
+      email: "gq@gmail.com",
+      password: "password1234",
+      image:
+        "https://drive.google.com/uc?export=view&1pnj52qiutq_F--Z84vd5FfjKwP-Psne0",
+    })
+  )
+  .then((res) => {
+    console.log("user");
+    console.log("res", res);
     // process.exit(0);
+    // Add seed yards to the DB
+    db.Yard.remove({})
+      .then(() =>
+        db.Yard.create({
+          name: "Sleepy Hollow",
+          description:
+            "A peaceful escape from the realities of everyday dogwalking",
+          address: "123 Somewhere St",
+          city: "Nowhereville",
+          state: "CO",
+          zip: 12345,
+          fence: true,
+          water: false,
+          hasPets: true,
+          rate: 20,
+          user_id: res._id,
+        })
+      )
+      .then((res) => {
+        console.log("yard");
+        console.log("res", res);
+        process.exit(0);
+      })
+      .catch((err) => {
+        console.log("Yard error");
+        console.error(err);
+        process.exit(1);
+      });
   })
   .catch((err) => {
+    console.log("User error");
     console.error(err);
     process.exit(1);
   });
 
 // Add seed yards to the DB
-db.Yard.remove({})
-  .then(() => db.Yard.collection.insertMany(yardSeed))
-  .then((data) => {
-    console.log(data.result.n + " yard records inserted!");
-    // process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
-// Add seed comments to the DB
-db.Comment.remove({})
-  .then(() => db.Comment.collection.insertMany(commentSeed))
-  .then((data) => {
-    console.log(data.result.n + " comment records inserted!");
-    // process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
-// Add seed appointments to the DB
-db.Appointment.remove({})
-  .then(() => db.Appointment.collection.insertMany(appointmentSeed))
-  .then((data) => {
-    console.log(data.result.n + " appointment records inserted!");
-    process.exit(0);
-  })
-  .catch((err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
-// User.create([
-//   {
-//     fname: "dan",
-//     lname: "kalt",
-//     email: "dan@dan.com",
-//     password: "123",
-//   },
-//   {
-//     fname: "gabe",
-//     lname: "quak",
-//     email: "gabe@quak.com",
-//     password: "123",
-//   },
-// ])
-//   .then((user) => {
-//     console.log(`${user.length} users created`);
+// db.Yard.remove({})
+//   .then(() =>
+//     db.Yard.create({
+//       name: "Sleepy Hollow",
+//       description:
+//         "A peaceful escape from the realities of everyday dogwalking",
+//       address: "123 Somewhere St",
+//       city: "Nowhereville",
+//       state: "CO",
+//       zip: 12345,
+//       fence: true,
+//       water: false,
+//       hasPets: true,
+//       rate: 20,
+//       user_id: user_id,
+//     })
+//   )
+//   .then((res) => {
+//     console.log("yard");
+//     console.log("res", res);
+//     process.exit(0);
 //   })
 //   .catch((err) => {
-//     console.log(err);
+//     console.log("Yard error");
+//     console.error(err);
+//     process.exit(1);
 //   });
-// // .finally(() => {
-// //   mongoose.connection.close();
-// // });
 
-// Yard.create([
-//   {
-//     name: "Sleepy Hollow",
-//     description: "A peaceful escape from the realities of everyday dogwalking",
-//     address: "123 Somewhere St",
-//     city: "Nowhereville",
-//     state: "CO",
-//     zip: 12345,
-//     rate: 20,
-//     fence: true,
-//     water: false,
-//     hasPets: true,
-//     user_id: User.ObjectId,
-//   },
-//   {
-//     name: "La Vista Relaxation",
-//     description:
-//       "A sunny place off the main strip where you and yours can go to relax and recharge",
-//     address: "88 Uptown Ave",
-//     city: "Nothere City",
-//     state: "CO",
-//     zip: 12345,
-//     rate: 5,
-//     fence: false,
-//     water: true,
-//     hasPets: false,
-//     user_id: User.ObjectId,
-//   },
-//   {
-//     name: "My backyard",
-//     description:
-//       "Not too big, but enough room for a few dogs to play comfortably",
-//     address: "4 S Parking Rd",
-//     city: "Smalltown",
-//     state: "CO",
-//     zip: 10001,
-//     rate: 17,
-//     fence: true,
-//     water: true,
-//     hasPets: true,
-//     user_id: User.ObjectId,
-//   },
-// ])
-//   .then((user) => {
-//     console.log(`${user.length} yards created`);
+// // Add seed comments to the DB
+// db.Comment.remove({})
+//   .then(() => db.Comment.collection.insertMany(commentSeed))
+//   .then((data) => {
+//     console.log(data.result.n + " comment records inserted!");
+//     // process.exit(0);
 //   })
 //   .catch((err) => {
-//     console.log(err);
-//   })
-//   .finally(() => {
-//     mongoose.connection.close();
+//     console.error(err);
+//     process.exit(1);
 //   });
 
-// -----------------------------------------------------------------------------
-// const { MongoClient } = require("mongodb");
-// const url =
-//   "mongodb+srv://gquak:Maverick2020!@17-workouttracker.ffzjd.mongodb.net/pupstop?retryWrites=true&w=majority";
-// const client = new MongoClient(url);
-// const dbName = "Pupstop";
-
-// async function run() {
-//   try {
-//     await client.connect();
-//     console.log("Connected correctly to server");
-//     const db = client.db(dbName);
-//     // Use the collection "people"
-//     const col = db.collection("people");
-//     // Construct a document
-//     let userSeed = [
-//       {
-//         // id: "3",
-//         fname: "Gabe",
-//         lname: "Quakkelaar",
-//         email: "gabe.quakkelaar@gmail.com",
-//         password: "password12345",
-//       },
-//       {
-//         // id: "2",
-//         fname: "Justin",
-//         lname: "Westmoreland",
-//         email: "justinrwestmoreland@gmail.com",
-//         password: "password12345",
-//       },
-//       {
-//         // id: "1",
-//         fname: "Jenn",
-//         lname: "Greiner",
-//         email: "jenn.greiner1@gmail.com",
-//         password: "password12345",
-//       },
-//     ];
-
-//     // Insert a single document, wait for promise so we can read it back
-//     const p = await col.insertMany(userSeed);
-//     // Find one document
-//     const myDoc = await col.find();
-//     //  // Print to the console
-//     //  console.log(myDoc);
-//   } catch (err) {
-//     console.log(err.stack);
-//   }
-//   try {
-//     await client.connect();
-//     console.log("Connected correctly to server");
-//     const db = client.db(dbName);
-//     // Use the collection "people"
-//     const colY = db.collection("people");
-//     // Construct a document
-//     let userSeed = [
-//       {
-//         // id: "3",
-//         fname: "Gabe",
-//         lname: "Quakkelaar",
-//         email: "gabe.quakkelaar@gmail.com",
-//         password: "password12345",
-//       },
-//       {
-//         // id: "2",
-//         fname: "Justin",
-//         lname: "Westmoreland",
-//         email: "justinrwestmoreland@gmail.com",
-//         password: "password12345",
-//       },
-//       {
-//         // id: "1",
-//         fname: "Jenn",
-//         lname: "Greiner",
-//         email: "jenn.greiner1@gmail.com",
-//         password: "password12345",
-//       },
-//     ];
-
-//     // Insert a single document, wait for promise so we can read it back
-//     const p = await colY.insertMany(yardSeed);
-//     // Find one document
-//     const myDoc = await colY.find();
-//     //  // Print to the console
-//     //  console.log(myDoc);
-//   } catch (err) {
-//     console.log(err.stack);
-//   } finally {
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
+// // Add seed appointments to the DB
+// db.Appointment.remove({})
+//   .then(() => db.Appointment.collection.insertMany(appointmentSeed))
+//   .then((data) => {
+//     console.log(data.result.n + " appointment records inserted!");
+//     process.exit(0);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     process.exit(1);
+//   });
