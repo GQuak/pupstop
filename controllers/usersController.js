@@ -1,15 +1,15 @@
 const db = require("../models");
-const User = require("../models/user");
+// const User = require("../models/user");
 
 module.exports = {
   findAll: function (req, res) {
-    // console.log("User Controller");
-    const users = User.find({}, { password: 0 })
-      // .sort({ date: -1 })
-      // .select("-password")
+    db.User.find(req.query)
       // .populate("yard")
+      .then((dbModel) => {
+        console.log("userModel", dbModel);
+        res.json(dbModel);
+      })
       .catch((err) => res.status(422).json(err));
-    res.json(users);
   },
 
   findById: function (req, res) {

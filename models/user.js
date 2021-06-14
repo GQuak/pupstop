@@ -8,12 +8,6 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   image: { type: String, required: false },
-  yard_id: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Yard",
-    },
-  ],
 });
 
 // Hashes password automatically
