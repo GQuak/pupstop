@@ -7,7 +7,7 @@ const styles = {
   },
 };
 
-function Navbar() {
+function Navbar(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light">
@@ -23,61 +23,93 @@ function Navbar() {
             style={styles.img}
           />
         </Link>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link
-                to="/searchresults"
-                className={
-                  window.location.pathname === "/searchresults"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Find a Yard
-              </Link>
-            </li>
-            {/* conditionally render Hey, users.fname and Login
-            if (req.session.logged_in) {
-            <li className="nav-item active">
-              <Link
-              ADD USER ID TO ROUTE
-                to={location => ({ ...location, pathname: "/profile" + req.session.id})} 
-              className={
-                  window.location.pathname === "/profile"
-                    ? "nav-link active"
-                    : "nav-link"}
-                    >
-              >
-              CHANGE TO USER.FNAME
-                Hey, User
-              </Link>
-            </li>
-            ADD LOGOUT BUTTON
-            } else {
-            <li className="nav-item">
-              <Link
-                to="/login"
-                className={
-                  window.location.pathname === "/login"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Login
-              </Link>
+        {props.loggedIn ? (
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link
+                  to="/searchresults"
+                  className={
+                    window.location.pathname === "/searchresults"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Find a Yard
+                </Link>
               </li>
-            } */}
-              
-            <li className="nav-item active">
+              {/* conditionally render Hey, users.fname and Login */}
+              <li className="nav-item active">
+                <Link
+                  // ADD USER ID TO ROUTE
+                  to={(location) => ({
+                    ...location,
+                    pathname: "/profile",
+                  })}
+                  className={
+                    window.location.pathname === "/profile"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  {/* CHANGE TO USER.FNAME */}
+                  Hey, User
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/"
+                  className={
+                    window.location.pathname === "/"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto">
+              <li className="nav-item">
+                <Link
+                  to="/searchresults"
+                  className={
+                    window.location.pathname === "/searchresults"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Find a Yard
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/login"
+                  className={
+                    window.location.pathname === "/login"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  Login
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+        {/* <li className="nav-item active">
               <Link
-              to="/profile"
-              className={
+                to="/profile"
+                className={
                   window.location.pathname === "/profile"
                     ? "nav-link active"
-                    : "nav-link"}
-                    >
-              {/* change to user's name */}
+                    : "nav-link"
+                }
+              >
+                change to user's name
                 Hey, User
               </Link>
             </li>
@@ -93,19 +125,19 @@ function Navbar() {
                 Login
               </Link>
             </li>
-          </ul>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          {/* <form style="white-space: nowrap;" className="form-inline my-2 my-lg-0">
+          </ul> */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        {/* <form style="white-space: nowrap;" className="form-inline my-2 my-lg-0">
                         {{#if logged_in}}
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit"
                             style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="logout">Logout</button>
@@ -116,7 +148,6 @@ function Navbar() {
                             style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="login">Login</button>
                         {{/unless}}
                     </form> */}
-        </div>
       </nav>
     </div>
   );

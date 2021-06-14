@@ -8,7 +8,6 @@ function MakeReservation() {
   const [dateTime, setDateTime] = useState({});
   const [yard, setYard] = useState({});
 
-
   const sections = window.location.pathname.split("/");
   const id = sections[sections.length - 1];
   useEffect(() => {
@@ -28,12 +27,12 @@ function MakeReservation() {
       API.saveReservation({
         datetime: dateTime,
         // user_id: req.session.id
-        yard_id: id
+        yard_id: id,
       })
         .then((res) => {
+          window.location.replace("/reservations");
           console.log("click then ", res.data);
           // API.getUser(res.data._id);
-          // window.location.replace("/reservations" + user._id);
         })
         .catch((err) => console.log(err));
     }
@@ -41,7 +40,7 @@ function MakeReservation() {
 
   return (
     <div>
-    <h1>Reserve {yard.name}</h1>
+      <h1>Reserve {yard.name}</h1>
       <DayTimePicker timeSlotSizeMinutes={15} onConfirm={handleScheduled} />
     </div>
   );
