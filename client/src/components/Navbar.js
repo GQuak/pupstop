@@ -85,6 +85,20 @@ function Navbar(props) {
                   Find a Yard
                 </Link>
               </li>
+              <li className="nav-item active">
+                <Link
+                  // ADD USER ID TO ROUTE
+                  to="/profile/60c7961fcde5ef96de7933e3"
+                  className={
+                    window.location.pathname === "/profile/60c7961fcde5ef96de7933e3"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                >
+                  {/* CHANGE TO USER.FNAME */}
+                  Profile
+                </Link>
+              </li>
               <li className="nav-item">
                 <Link
                   to="/login"

@@ -7,37 +7,29 @@ const dateFormat = require("dateformat");
 
 function ViewReservation() {
   const [reservations, setReservations] = useState([]);
-  const [formObject, setFormObject] = useState({});
-  const [user, setUser] = useState([]);
 
   const sections = window.location.pathname.split("/");
   const id = sections[sections.length - 1];
   console.log(id);
 
   useEffect(() => {
-    // Load all reservations and store them with setReservations
+    loadReservations();
+  }, []);
+  // Load all reservations and store them with setReservations
+  function loadReservations() {
     API.getReservations()
       .then((res) => {
         setReservations(res.data);
         console.log("reservations data: ", res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }
 
-  // Load yard details on button click
-  const handleYardButtonClick = (e) => {
-    e.preventDefault();
-    // FIX SO yard_id IS UNIQUE TO BUTTON
-    window.location.replace("/yard/" + id);
-  };
-
-  // Load makereservation on button click
-
-  const handleEditButtonClick = (e) => {
-    e.preventDefault();
-    // FIX SO _id IS UNIQUE TO BUTTON
-    window.location.replace("/makereservation/" + reservations._id);
-  };
+  function deleteReservation(id) {
+    API.deleteReservation(id)
+      .then((res) => loadReservations())
+      .catch((err) => console.log(err));
+  }
 
   return (
     <div>
@@ -61,21 +53,22 @@ function ViewReservation() {
                         "dddd, mmmm dS, yyyy, h:MM:ss TT"
                       )}
                     </div>
-                    
+
                     <Button className="edit">
-                    <Link
-                      // ADD USER ID TO ROUTE
-                      to={`/yard/${reservation.yard_id}`}
-                    >
-                      View Yard
+                      <Link
+                        // ADD USER ID TO ROUTE
+                        to={`/yard/${reservation.yard_id}`}
+                        style={{ color: "white" }}
+                      >
+                        View Yard
                       </Link>
                     </Button>
                     <Button
                       className="edit"
-                      id={reservation.yard_id}
-                      onClick={handleEditButtonClick}
+                      id={reservation._id}
+                      onClick={() => deleteReservation(reservation._id)}
                     >
-                      Edit
+                      Cancel Reservation
                     </Button>
                   </div>
                 </ListItem>

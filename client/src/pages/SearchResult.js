@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import YardCard from "../components/YardCard";
-import Button from "../components/Button";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
-import { List, ListItem } from "../components/List";
-import { logDOM } from "@testing-library/dom";
 
 function SearchResult() {
   // Setting our component's initial state

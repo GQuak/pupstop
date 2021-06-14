@@ -31,6 +31,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route path="/addyard" component={AddYard} />
         <Route path="/makereservation" component={MakeReservation} />
+        <Route path="/editreservation" component={MakeReservation} />
         <Route path="/profile" component={Profile} />
         <Route path="/yard" component={Yard} />
         <Route path="/reservations" component={ViewReservation} />

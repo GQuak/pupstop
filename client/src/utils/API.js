@@ -76,6 +76,10 @@ export default {
   getReservation: function (id) {
     return axios.get("/api/reservations/" + id);
   },
+  // Gets the yard with the given id
+  updateReservation: function (id) {
+    return axios.put("/api/reservations/" + id);
+  },
   // Deletes the yard with the given id
   deleteReservation: function (id) {
     return axios.delete("/api/reservations/" + id);
