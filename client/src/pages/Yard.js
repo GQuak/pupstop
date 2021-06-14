@@ -12,7 +12,7 @@ function Yard(props) {
     API.getYard(id)
       .then((res) => {
         setYard(res.data);
-        console.log(res.data);
+        // console.log("yard data: ", res.data);
       })
       .catch((err) => console.log(err));
   });
@@ -31,7 +31,8 @@ function Yard(props) {
               <h1>{yard.name}</h1>
               {/* UPDATE TO users.fname users.lname */}
               <h3>
-                Hosted by {yard.user_id.fname} {yard.user_id.lname}
+                Hosted by {yard.user_id && yard.user_id.fname}{" "}
+                {yard.user_id && yard.user_id.lname}
               </h3>
               <br />
               <h4>

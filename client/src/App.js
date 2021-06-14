@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Homepage from "./pages/Homepage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -14,10 +15,16 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import ViewReservation from "./pages/ViewReservation";
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(
+    // initial value
+    document.cookie
+      .split(";")
+      .some((item) => item.trim().startsWith("logedIn="))
+  );
   return (
     <Router>
       <div>
-        <Navbar />
+        <Navbar {...{ loggedIn }} />
         <Route exact path="/" component={Homepage} />
         <Route path="/searchresults" component={SearchResult} />
         <Route exact path="/login" component={Login} />

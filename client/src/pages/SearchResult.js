@@ -48,7 +48,7 @@ function SearchResult() {
 
   return (
     <div>
-    {/* ADD FILTERS */}
+      {/* ADD FILTERS */}
       {yards.length ? (
         <div>
           {yards.map((yard) => (
@@ -58,8 +58,9 @@ function SearchResult() {
               name={yard.name}
               city={yard.city}
               state={yard.state}
-            >
-            </YardCard>
+              fname={yard.user_id && yard.user_id.fname}
+              lname={yard.user_id && yard.user_id.lname}
+            ></YardCard>
           ))}
         </div>
       ) : (
