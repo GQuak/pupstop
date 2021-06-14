@@ -4,11 +4,11 @@ import API from "../utils/API";
 
 const styles = {
   form: {
-    width: 300,
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
-    textAlign: "center"
+    textAlign: "center",
+    color: "#34374c",
   },
 };
 
@@ -22,20 +22,10 @@ function Login() {
 
   return (
     <div className="container">
-      <div className="row" >
-        <div className="col-sm-4"></div>
-        <div className="col-sm-4" style={styles.form}>
-          <img
-            src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
-            style={styles.form}
-            alt="PupStop Logo"
-          />
-        </div>
-        <div className="col-sm-4"></div>
-      </div>
+      <h1 style={styles.form}>Login</h1>
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-4"  style={styles.form}>
+        <div className="col-sm-4" style={styles.form}>
           <form className="form signup-form" onSubmit={handleSubmit}>
             <div className="form-group" style={styles.form}>
               <input

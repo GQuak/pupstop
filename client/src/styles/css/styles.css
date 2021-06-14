@@ -63,7 +63,7 @@ header.masthead h1 {
 div.masthead {
     position: relative;
     background-color: #343a40;
-    background: url("https://drive.google.com/uc?export=view&id=1mpGulhg71VRzcLdwxUV2mBWJrWzPW7sT") no-repeat center center;
+    background: url("https://drive.google.com/uc?export=view&id=1Pa_bB790PZo5c7_VxdbKcfm1xNipgGzh") no-repeat center center;
     background-size: cover;
     padding-top: 4rem;
     padding-bottom: 8rem;
@@ -85,7 +85,8 @@ div.masthead h1,
 div.masthead h3, 
 div.masthead h4 {
     /* font-size: 2rem; */
-    text-shadow: -2px 2px black;
+    text-shadow: 3px 3px #00001d;
+    color: white;
 }
 
 

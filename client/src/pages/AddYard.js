@@ -15,10 +15,6 @@ function AddYard() {
   const [formObject, setFormObject] = useState({});
   const [users, setUsers] = useState([]);
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value });
-  }
   // get id for current user
   const sections = window.location.pathname.split("/");
   const id = sections[sections.length - 1];
@@ -28,12 +24,24 @@ function AddYard() {
       .catch((err) => console.log(err));
   }, []);
 
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submit clicked");
     console.log(formObject);
     // FIX POST ROUTE
-    if (formObject.name && formObject.description && formObject.address && formObject.city && formObject.state && formObject.zip) {
+    if (
+      formObject.name &&
+      formObject.description &&
+      formObject.address &&
+      formObject.city &&
+      formObject.state &&
+      formObject.zip
+    ) {
       API.saveYard({
         name: formObject.name,
         description: formObject.description,
@@ -44,7 +52,7 @@ function AddYard() {
         fence: formObject.fence,
         water: formObject.water,
         hasPets: formObject.hasPets,
-        // user_id: users._id,
+        user_id: users._id,
       })
         .then((res) => {
           console.log("click then ", res.data);
@@ -76,7 +84,8 @@ function AddYard() {
               <input
                 type="text"
                 className="form-control"
-                id="name-yard"                name="name"
+                id="name-yard"
+                name="name"
                 placeholder="Give your yard a name"
                 onChange={handleInputChange}
               />
@@ -216,10 +225,7 @@ function AddYard() {
               />
               <label for="pets-yard">There will be other pets at my yard</label>
               <br></br>
-              <Button
-                className="default"
-                onClick={handleSubmit}
-              >
+              <Button className="default" onClick={handleSubmit}>
                 Submit
               </Button>
             </div>

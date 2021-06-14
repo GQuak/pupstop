@@ -19,7 +19,7 @@ module.exports = {
   },
   create: function (req, res) {
     db.Yard.create(req.body)
-      .then((dbModel) => res.json(dbModel))
+      .then((dbModel) => db.Yard.populate("user_id"))
       .catch((err) => res.status(422).json(err));
   },
   update: function (req, res) {
