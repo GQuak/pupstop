@@ -5,12 +5,12 @@
 - [Deployed Site](#deployed-site)
 - [User Story](#user-story)
 - [Description](#description)
-- [Usage](#Usage)
-- [Mock-Up](#Mock-Up)
-- [Getting Started](#Getting-Started)
-- [Contributors](#Contributors)
-- [Credits](#Credits)
-- [License](#License)
+- [Usage](#usage)
+- [Mock-Up](#mock-up)
+- [Getting Started](#getting-started)
+- [Contributors](#contributors)
+- [Credits](#credits)
+- [License](#license)
 
 ## Deployed Site
 
@@ -38,12 +38,14 @@ Hosts can sign up to host their yard on Pup Stop. Once logged in, hosts can view
 
 The following images demonstrate the Pup Stop appearance and functionality:
 
-![Home Page](./screenshots/homepage.gif)
+![Home Page](./screenshots/homepage.png)
 ![Create an account](./screenshots/createacct.png)
-![Become a host](./screenshots/hostyard.png)
-![Profile](./screenshots/profile.png)
-![Find a Yard](./screenshots/findyard.gif)
 ![Login](./screenshots/login.png)
+![Profile](./screenshots/profile.png)
+![Become a host](./screenshots/hostyard.png)
+![Find a Yard](./screenshots/findyard.png)
+![Yard Details](./screenshots/yarddetails.png)
+![Make a Reservation](./screenshots/reservation.png)
 
 ## Getting Started
 
@@ -65,17 +67,18 @@ Jenn Greiner, Gabe Quakkelar
 
 ## Credits
 
-- [W3 Schools](https://www.w3schools.com/)
-- [Node.js](https://nodejs.dev/)
-- [Express.js](https://expressjs.com/)
-- [Handlebars.js](https://handlebarsjs.com/)
-- [NPM](https://www.npmjs.com/)
-- [NPM dotenv](https://www.npmjs.com/package/dotenv)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [MySQL](https://www.mysql.com/)
-- [POSTMan](https://www.postman.com/)
-- [SwaggerHub](https://swagger.io/tools/swaggerhub/)
-- [Google Maps API](https://developers.google.com/maps)
+* [React.js](https://www.w3schools.com/)
+* [HashRouter](https://reactrouter.com/web/api/HashRouter)
+* [Create React App](https://create-react-app.dev/)
+* [Create React App Deployment: GitHub Pages](https://create-react-app.dev/docs/deployment/#github-pages)
+* [Bootstrap](https://getbootstrap.com/)
+* [W3 Schools](https://www.w3schools.com/)
+* [Node.js](https://nodejs.dev/)
+* [Express.js](https://expressjs.com/)
+* [NPM](https://www.npmjs.com/)
+* [NPM dotenv](https://www.npmjs.com/package/dotenv)
+* [MDN Web Docs](https://developer.mozilla.org/)
+* [React Day Time Picker](https://www.npmjs.com/package/@mooncake-dev/react-day-time-picker)
 
 ## License
 
