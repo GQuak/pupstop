@@ -4,10 +4,11 @@ import API from "../utils/API";
 
 const styles = {
   form: {
-    width: 300,
     display: "flex",
     justifyContent: "center",
-    alignSelf: "center",
+    alignItems: "center",
+    textAlign: "center",
+    color: "#34374c",
   },
 };
 
@@ -65,17 +66,7 @@ function AddYard() {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col-sm-4"></div>
-        <div className="col-sm-3">
-          <img
-            src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
-            style={styles.form}
-            alt="PupStop Logo"
-          />
-        </div>
-        <div className="col-sm-4"></div>
-      </div>
+      <h1 style={styles.form}>Add a yard</h1>
       <div className="row">
         <div className="col-sm-4"></div>
         <div className="col-sm-3">
@@ -225,7 +216,11 @@ function AddYard() {
               />
               <label for="pets-yard">There will be other pets at my yard</label>
               <br></br>
-              <Button className="default" onClick={handleSubmit}>
+              <Button
+                className="default"
+                style={styles.form}
+                onClick={handleSubmit}
+              >
                 Submit
               </Button>
             </div>

@@ -18,6 +18,18 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
 
+  findByEmail: function (req, res) {
+    db.User.findOne({ email: req.email }, function (err, user) {
+      if (err) throw err;
+
+      // test a matching password
+      user.comparePassword(req.password, function (err, isMatch) {
+        if (err) throw err;
+        console.log(req.password, isMatch); // -&gt; Password123: true
+      });
+    });
+  },
+
   create: function (req, res) {
     db.User.create(req.body)
       .then((dbModel) => {
