@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button";
 
-function YardCard({ id, name, city, state }) {
+function YardCard({ id, name, city, state, fname, lname }) {
   const handleButtonClick = (e) => {
     e.preventDefault();
     window.location.replace("/yard/" + id);
@@ -19,7 +19,9 @@ function YardCard({ id, name, city, state }) {
                 <div className="col-xl-9 mx-auto">
                   <h1>{name}</h1>
                   {/* UPDATE TO users.fname users.lname */}
-                  <h3>Hosted by Jenn Greiner</h3>
+                  <h3>
+                    Hosted by {fname} {lname}
+                  </h3>
                   <br />
                   <h4>
                     {" "}
