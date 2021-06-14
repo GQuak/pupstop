@@ -11,7 +11,7 @@ import MakeReservation from "./pages/MakeReservation";
 import Yard from "./pages/Yard";
 import EditYard from "./pages/EditYard";
 import EditProfile from "./pages/EditProfile";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import ViewReservation from "./pages/ViewReservation";
 
 function App() {

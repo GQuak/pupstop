@@ -100,32 +100,6 @@ function Navbar(props) {
             </ul>
           </div>
         )}
-        {/* <li className="nav-item active">
-              <Link
-                to="/profile"
-                className={
-                  window.location.pathname === "/profile"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                change to user's name
-                Hey, User
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/login"
-                className={
-                  window.location.pathname === "/login"
-                    ? "nav-link active"
-                    : "nav-link"
-                }
-              >
-                Login
-              </Link>
-            </li>
-          </ul> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -137,17 +111,6 @@ function Navbar(props) {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        {/* <form style="white-space: nowrap;" className="form-inline my-2 my-lg-0">
-                        {{#if logged_in}}
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit"
-                            style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="logout">Logout</button>
-                        {{/if}}
-
-                        {{#unless logged_in}}
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit"
-                            style="color: #5B95B3; border-color: #5B95B3; background-color: white;" id="login">Login</button>
-                        {{/unless}}
-                    </form> */}
       </nav>
     </div>
   );

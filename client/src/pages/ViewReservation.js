@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Button from "../components/Button";
 import { List, ListItem } from "../components/List";
+import { Link } from "react-router-dom";
 import API from "../utils/API";
 const dateFormat = require("dateformat");
 
@@ -52,7 +53,7 @@ function ViewReservation() {
                   <div className="row">
                     <div className="col-lg-4">
                       {/* UPDATE TO yard.name */}
-                      {reservation.yard_id && reservation.yard_id.name}
+                      {reservation.yard_id}
                     </div>
                     <div className="col-lg-4">
                       {dateFormat(
@@ -60,8 +61,14 @@ function ViewReservation() {
                         "dddd, mmmm dS, yyyy, h:MM:ss TT"
                       )}
                     </div>
-                    <Button className="edit" onClick={handleYardButtonClick}>
+                    
+                    <Button className="edit">
+                    <Link
+                      // ADD USER ID TO ROUTE
+                      to={`/yard/${reservation.yard_id}`}
+                    >
                       View Yard
+                      </Link>
                     </Button>
                     <Button
                       className="edit"
