@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
 import API from "../utils/API";
 import DayTimePicker from "@mooncake-dev/react-day-time-picker";
-import userEvent from "@testing-library/user-event";
 
 function MakeReservation() {
   const [dateTime, setDateTime] = useState({});

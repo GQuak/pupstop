@@ -19,7 +19,7 @@ function App() {
     // initial value
     document.cookie
       .split(";")
-      .some((item) => item.trim().startsWith("logedIn="))
+      .some((item) => item.trim().startsWith("loggedIn="))
   );
   return (
     <Router>

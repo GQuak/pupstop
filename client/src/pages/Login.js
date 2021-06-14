@@ -4,38 +4,78 @@ import API from "../utils/API";
 
 const styles = {
   form: {
-    width: 300,
     display: "flex",
     justifyContent: "center",
     alignSelf: "center",
-    textAlign: "center"
+    textAlign: "center",
+    color: "#34374c",
   },
 };
 
-function Login() {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+// const loginFormHandler = async (event) => {
+//   // Stop the browser from submitting the form so we can do so with JavaScript
+//   event.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+//   // Gather the data from the form elements on the page
+//   const email = document.querySelector("#email-login").value.trim();
+//   const password = document.querySelector("#password-login").value.trim();
+
+//   if (email && password) {
+//     console.log(email + " " + password);
+//     // Send the e-mail and password to the server
+//     const response = await fetch("/api/users/login", {
+//       method: "POST",
+//       body: JSON.stringify({ email, password }),
+//       headers: { "Content-Type": "application/json" },
+//     });
+
+//     if (response.ok) {
+//       document.location.replace("/");
+//     } else {
+//       alert("Failed to log in");
+//     }
+//   }
+// };
+
+// const signupButton = async (event) => {
+//   // Stop the browser from submitting the form so we can do so with JavaScript
+//   event.preventDefault();
+//   console.log("signup button click");
+
+//   window.location = "/signup";
+// };
+
+function Login() {
+  const [users, setUsers] = useState({});
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUsers({ ...users, [name]: value });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(users.email + " " + users.password);
+    if (users.email && users.password) {
+      API.getLogin(users.email)
+        .then((res) => setUsers(res.data))
+        .catch((err) => console.log(err));
+    }
+  };
+  //   API.getUser(users.email)
+  //   .then((res) => setUsers(res.data))
+  //   .catch((err) => console.log(err));
+  //   // Window.location.replace("/");
+  // } else {
+  //   alert("Failed to log in");
+  // }
 
   return (
     <div className="container">
-      <div className="row" >
-        <div className="col-sm-4"></div>
-        <div className="col-sm-4" style={styles.form}>
-          <img
-            src="https://drive.google.com/uc?export=view&id=1AoWVQugChZV9non-0YnO7qY6qyfR9EzV"
-            style={styles.form}
-            alt="PupStop Logo"
-          />
-        </div>
-        <div className="col-sm-4"></div>
-      </div>
+      <h1 style={styles.form}>Login</h1>
       <div className="row">
         <div className="col-sm-4"></div>
-        <div className="col-sm-4"  style={styles.form}>
+        <div className="col-sm-4" style={styles.form}>
           <form className="form signup-form" onSubmit={handleSubmit}>
             <div className="form-group" style={styles.form}>
               <input
@@ -43,16 +83,18 @@ function Login() {
                 type="text"
                 id="email-login"
                 placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>
               <input
                 className="form-input"
-                type="text"
+                type="password"
                 id="password-login"
                 placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                onChange={handleInputChange}
               />
             </div>
             <div className="form-group" style={styles.form}>

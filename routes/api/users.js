@@ -19,4 +19,6 @@ router
   .post(usersController.update)
   .delete(usersController.remove);
 
+router.route("/login/:id").get(usersController.findByEmail);
+
 module.exports = router;
