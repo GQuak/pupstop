@@ -2,19 +2,20 @@ const db = require("../models");
 
 module.exports = {
   findAll: function (req, res) {
-    console.log("Yards Controller");
     db.Yard.find(req.query)
-      // .sort({ date: -1 })
-      .then((dbModel) => {
-        console.log("dbModel", dbModel);
-        res.json(dbModel);
-      })
-      .catch((err) => res.status(422).json(err));
+      .populate("user_id")
+      .exec((err, yards) => {
+        console.log("Populated Yards " + yards);
+        return res.json(yards);
+      });
   },
   findById: function (req, res) {
     db.Yard.findById(req.params.id)
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
+      .populate("user_id")
+      .exec((err, yard) => {
+        console.log("Populated Yard " + yard);
+        return res.json(yard);
+      });
   },
   create: function (req, res) {
     db.Yard.create(req.body)

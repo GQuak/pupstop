@@ -10,9 +10,12 @@ function Yard(props) {
   const id = sections[sections.length - 1];
   useEffect(() => {
     API.getYard(id)
-      .then((res) => setYard(res.data))
+      .then((res) => {
+        setYard(res.data);
+        console.log(res.data);
+      })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   const handleButtonClick = (e) => {
     e.preventDefault();
@@ -27,7 +30,9 @@ function Yard(props) {
             <div className="col-xl-9 mx-auto">
               <h1>{yard.name}</h1>
               {/* UPDATE TO users.fname users.lname */}
-              <h3>Hosted by Jenn Greiner</h3>
+              <h3>
+                Hosted by {yard.user_id.fname} {yard.user_id.lname}
+              </h3>
               <br />
               <h4>
                 {" "}
@@ -40,9 +45,9 @@ function Yard(props) {
       </div>{" "}
       <div className="row">
         <div className="col-md-8">
-        <h3>Description</h3>
-        {yard.description}
-        <hr />
+          <h3>Description</h3>
+          {yard.description}
+          <hr />
           <List>
             <h3>Features</h3>
             {yard.water ? <ListItem>Has Water</ListItem> : <p></p>}
