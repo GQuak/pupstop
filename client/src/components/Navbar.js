@@ -88,9 +88,9 @@ function Navbar(props) {
               <li className="nav-item active">
                 <Link
                   // ADD USER ID TO ROUTE
-                  to="/profile/60c7961fcde5ef96de7933e3"
+                  to="/profile/60c7eef3796dc9a6b0580b0f"
                   className={
-                    window.location.pathname === "/profile/60c7961fcde5ef96de7933e3"
+                    window.location.pathname === "/profile/60c7eef3796dc9a6b0580b0f"
                       ? "nav-link active"
                       : "nav-link"
                   }

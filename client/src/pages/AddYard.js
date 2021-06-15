@@ -41,7 +41,8 @@ function AddYard() {
       formObject.address &&
       formObject.city &&
       formObject.state &&
-      formObject.zip
+      formObject.zip &&
+      formObject.rate
     ) {
       API.saveYard({
         name: formObject.name,
@@ -50,10 +51,11 @@ function AddYard() {
         city: formObject.city,
         state: formObject.state,
         zip: formObject.zip,
+        rate: formObject.rate,
         fence: formObject.fence,
         water: formObject.water,
         hasPets: formObject.hasPets,
-        user_id: users._id,
+        // user_id: users._id,
       })
         .then((res) => {
           console.log("click then ", res.data);

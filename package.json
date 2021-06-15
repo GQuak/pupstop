@@ -31,7 +31,8 @@
     "build": "cd client && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "seed": "node ./scripts/seedDB.js"
+    "seed": "node ./scripts/seedDB.js",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
